@@ -657,6 +657,80 @@
             color: #ffffff;
         }
 
+        .badge-discount {
+            background: linear-gradient(135deg, #c7385d 0%, #9e1b32 100%);
+            color: #ffffff;
+        }
+
+        /* Wishlist Heart Button */
+        .collection-product-card .btn-wishlist {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 210, 200, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #634f6d;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 6;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            padding: 0;
+            line-height: 1;
+        }
+
+        .collection-product-card .btn-wishlist:hover {
+            transform: scale(1.12);
+            color: #d11a48;
+            background: #ffffff;
+        }
+
+        .collection-product-card .btn-wishlist.active {
+            color: #e62354;
+            background: #ffffff;
+        }
+
+        /* Hover Quick View Button */
+        .collection-product-card .card-quick-add {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(36, 0, 56, 0.92);
+            backdrop-filter: blur(6px);
+            color: var(--gold);
+            border: none;
+            padding: 9px 14px;
+            font-family: var(--sans-font);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            cursor: pointer;
+            transform: translateY(100%);
+            transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+            z-index: 5;
+            text-decoration: none;
+        }
+
+        .collection-product-card:hover .card-quick-add {
+            transform: translateY(0);
+        }
+
+        .collection-product-card .card-quick-add:hover {
+            background: var(--gold);
+            color: #240038;
+        }
+
         .c-card-body {
             padding: 12px 14px 14px;
             display: flex;
