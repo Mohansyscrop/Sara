@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,10 +21,14 @@ class DashboardController extends Controller
         $newContacts = Contact::where('status', 'New')->count();
         $totalContacts = Contact::count();
         $totalUsers = User::count();
+        $totalOrders = Order::count();
+        $newOrders = Order::where('order_status', 'new')->count();
 
         $recentProducts = Product::with('category')->latest()->take(5)->get();
         $recentContacts = Contact::latest()->take(5)->get();
         $recentUsers = User::with('roles')->latest()->take(5)->get();
+        $recentOrders = Order::with('items')->latest()->take(5)->get();
+
 
         // Chart 1: Products per category
         $categoryStats = Category::withCount('products')->get();
@@ -42,6 +47,9 @@ class DashboardController extends Controller
             'newContacts',
             'totalContacts',
             'totalUsers',
+            'totalOrders',
+            'newOrders',
+            'recentOrders',
             'recentProducts',
             'recentContacts',
             'recentUsers',

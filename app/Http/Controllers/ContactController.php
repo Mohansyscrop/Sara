@@ -36,9 +36,15 @@ public function store(Request $request)
         'status' => 'New',
     ]);
 
-    // Send email
-    Mail::to(config('mail.contact_email'))
-        ->send(new ContactInquiryMail($contact));
+    // Send email safely
+    try {
+        if (config('mail.contact_email')) {
+            Mail::to(config('mail.contact_email'))
+                ->send(new ContactInquiryMail($contact));
+        }
+    } catch (\Throwable $e) {
+        \Illuminate\Support\Facades\Log::warning('Contact inquiry email failed to send: ' . $e->getMessage());
+    }
 
     if ($request->ajax() || $request->wantsJson()) {
         return response()->json([

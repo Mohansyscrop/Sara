@@ -15,7 +15,7 @@ use Razorpay\Api\Errors\SignatureVerificationError;
 class CheckoutController extends Controller
 {
     /**
-     * Create local pending order and initialize Razorpay Order.
+     * Create local order and initialize Razorpay Order if enabled, or save direct order.
      */
     public function createRazorpayOrder(Request $request)
     {
@@ -33,16 +33,6 @@ class CheckoutController extends Controller
             'pincode'           => 'required|string|min:4|max:10',
             'customer_notes'    => 'nullable|string|max:500',
         ]);
-
-        $keyId = config('razorpay.key_id');
-        $keySecret = config('razorpay.key_secret');
-
-        if (empty($keyId) || empty($keySecret)) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Razorpay API keys (RAZORPAY_KEY_ID & RAZORPAY_KEY_SECRET) are missing in the .env file. Please add your keys from Razorpay Dashboard to proceed with payment.'
-            ], 422);
-        }
 
         $product = Product::findOrFail($validated['product_id']);
 
@@ -62,10 +52,13 @@ class CheckoutController extends Controller
         $totalAmount = $subtotal + $shippingAmount;
         $amountInPaise = (int) round($totalAmount * 100);
 
-        $orderNumber = 'SB-' . date('Ymd') . '-' . strtoupper(Str::random(5));
+        $isRazorpayEnabled = config('razorpay.enabled', false);
 
         DB::beginTransaction();
         try {
+            $prefix = $isRazorpayEnabled ? 'SB-' : 'SB-DIR-';
+            $orderNumber = $prefix . date('Ymd') . '-' . strtoupper(Str::random(5));
+
             $order = Order::create([
                 'order_number'      => $orderNumber,
                 'user_id'           => auth()->check() ? auth()->id() : null,
@@ -82,7 +75,7 @@ class CheckoutController extends Controller
                 'discount_amount'   => 0.00,
                 'total_amount'      => $totalAmount,
                 'currency'          => 'INR',
-                'payment_method'    => 'razorpay',
+                'payment_method'    => $isRazorpayEnabled ? 'razorpay' : 'direct_order',
                 'payment_status'    => 'pending',
                 'order_status'      => 'new',
                 'customer_notes'    => $validated['customer_notes'] ?? null,
@@ -100,6 +93,32 @@ class CheckoutController extends Controller
                 'quantity'      => $validated['quantity'],
                 'total'         => $subtotal,
             ]);
+
+            // If Razorpay gateway is disabled, directly complete order submission
+            if (!$isRazorpayEnabled) {
+                DB::commit();
+
+                return response()->json([
+                    'success'      => true,
+                    'direct_order' => true,
+                    'order_id'     => $order->id,
+                    'order_number' => $order->order_number,
+                    'message'      => 'Your direct express order has been placed successfully! Our concierge team will reach out to you shortly.',
+                    'redirect_url' => route('checkout.success', ['order_number' => $order->order_number]),
+                ]);
+            }
+
+            // Razorpay gateway logic when enabled
+            $keyId = config('razorpay.key_id');
+            $keySecret = config('razorpay.key_secret');
+
+            if (empty($keyId) || empty($keySecret)) {
+                DB::rollBack();
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Razorpay API keys (RAZORPAY_KEY_ID & RAZORPAY_KEY_SECRET) are missing in the .env file. Please add your keys from Razorpay Dashboard to proceed with payment.'
+                ], 422);
+            }
 
             // Call Razorpay API to generate razorpay_order_id
             $api = new Api($keyId, $keySecret);
@@ -123,6 +142,7 @@ class CheckoutController extends Controller
 
             return response()->json([
                 'success'           => true,
+                'direct_order'      => false,
                 'order_id'          => $order->id,
                 'order_number'      => $order->order_number,
                 'razorpay_order_id' => $razorpayOrder['id'],
@@ -144,16 +164,17 @@ class CheckoutController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
-            Log::error('Razorpay Order Creation Failed: ' . $e->getMessage(), [
+            Log::error('Order Creation Failed: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString()
             ]);
 
             return response()->json([
                 'success' => false,
-                'message' => 'Unable to initiate payment with Razorpay: ' . $e->getMessage()
+                'message' => 'Unable to complete order submission: ' . $e->getMessage()
             ], 500);
         }
     }
+
 
     /**
      * Verify payment signature from Razorpay.

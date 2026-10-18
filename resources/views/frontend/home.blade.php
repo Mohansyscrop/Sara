@@ -1,7 +1,145 @@
 @extends('layouts.app')
 
-@section('title', "Sara's Boutique | Luxury Indian Ethnic Fashion & Designer Churidar Sets")
-@section('meta_description', "Discover handcrafted luxury Indian ethnic fashion at Sara's Boutique. Shop exclusive Churidar Sets, royal Anarkalis, designer Salwar Suits, and Silk Dupattas woven in pure mulberry silk with zardozi embroidery.")
+@section('title', "Saras Boutique | Women's Boutique in Puducherry — Est. 2023")
+@section('meta_description', "Welcome to Saras Boutique in Shanmugapuram, Puducherry. Started as a home-based venture in 2023 and developed into our boutique shop by 2026, offering elegant Churidar sets, designer suits, and personalized customer care.")
+
+@push('styles')
+<style>
+    /* ===================== SARAS BOUTIQUE OPENING POPUP MODAL ===================== */
+    body.modal-open {
+        padding-right: 0 !important;
+    }
+
+    .modal {
+        padding-right: 0 !important;
+    }
+
+    .modal-backdrop.show {
+        opacity: 0.65;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .saras-opening-modal {
+        z-index: 1065 !important;
+        padding-right: 0 !important;
+    }
+
+    .saras-opening-modal .modal-dialog {
+
+        max-width: 820px;
+        margin: 1.75rem auto;
+        padding: 0 15px;
+    }
+
+    .saras-opening-modal .modal-content.opening-popup-content {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        position: relative;
+        border-radius: 20px;
+    }
+
+    .saras-opening-modal .opening-popup-body {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75), 0 0 0 1.5px rgba(212, 175, 55, 0.5);
+        background: #180026;
+        transition: transform 0.3s ease;
+    }
+
+    .saras-opening-modal .opening-popup-img {
+        width: 100%;
+        max-height: 85vh;
+        height: auto;
+        display: block;
+        border-radius: 20px;
+        object-fit: contain;
+    }
+
+    .saras-opening-modal .opening-popup-link {
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .saras-opening-modal .opening-popup-close-btn {
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        width: 44px;
+        height: 44px;
+        background: #240038;
+        color: #ffffff;
+        border: 2px solid #d4af37;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 19px;
+        cursor: pointer;
+        z-index: 1080;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 0;
+        line-height: 1;
+    }
+
+    .saras-opening-modal .opening-popup-close-btn:hover {
+        background: #d4af37;
+        color: #240038;
+        transform: scale(1.12) rotate(90deg);
+        box-shadow: 0 10px 28px rgba(212, 175, 55, 0.5);
+    }
+
+    .saras-opening-modal .opening-popup-close-btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 768px) {
+        .saras-opening-modal .modal-dialog {
+            max-width: 92vw;
+            margin: 1rem auto;
+            padding: 0 10px;
+        }
+        .saras-opening-modal .opening-popup-close-btn {
+            top: 10px;
+            right: 10px;
+            width: 38px;
+            height: 38px;
+            font-size: 16px;
+            background: rgba(36, 0, 56, 0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .saras-opening-modal .opening-popup-body,
+        .saras-opening-modal .opening-popup-img {
+            border-radius: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .saras-opening-modal .modal-dialog {
+            max-width: 95vw;
+            margin: 0.65rem auto;
+        }
+        .saras-opening-modal .opening-popup-close-btn {
+            top: 8px;
+            right: 8px;
+            width: 34px;
+            height: 34px;
+            font-size: 15px;
+        }
+        .saras-opening-modal .opening-popup-body,
+        .saras-opening-modal .opening-popup-img {
+            border-radius: 12px;
+        }
+    }
+</style>
+@endpush
 
 @section('content')
 
@@ -13,36 +151,35 @@
                 <!-- Left Content Column -->
                 <div class="hero-banner-content">
                     <div class="hero-tag-pill hero-load-item">
-                        <i class="bi bi-stars"></i> Festive Edit 2026 • Exclusive Designs
+                        <i class="bi bi-stars"></i> Puducherry • Est. 2023 • Boutique Shop 2026
                     </div>
 
                     <h1 class="hero-main-title hero-load-item delay-1">
-                        Timeless Tradition,<br>
-                        <span class="title-italic-gold">Modern Elegance</span>
+                        Saras Boutique<br>
+                        <span class="title-italic-gold">Fashion · Elegance · You</span>
                     </h1>
 
                     <p class="hero-desc hero-load-item delay-2">
-                        Discover handcrafted Churidar sets, royal Anarkalis, and bespoke ethnic silhouettes woven in
-                        pure mulberry silk with intricate gold zardozi embroidery.
+                        Rooted in Puducherry, Saras Boutique began as a home-based business in 2023 and blossomed into a boutique shop by 2026. Explore our carefully curated Churidar sets, festive ethnic ensembles, and bespoke customer experience.
                     </p>
 
                     <!-- Quick Highlight Badges -->
                     <div class="hero-meta-strip hero-load-item delay-2">
-                        <span class="meta-item"><i class="bi bi-patch-check-fill text-gold"></i> Silk Mark
-                            Certified</span>
+                        <span class="meta-item"><i class="bi bi-geo-alt-fill text-gold"></i> Shanmugapuram, Puducherry</span>
                         <span class="meta-dot">•</span>
-                        <span class="meta-item"><i class="bi bi-scissors text-gold"></i> Custom Tailored Fit</span>
+                        <span class="meta-item"><i class="bi bi-patch-check-fill text-gold"></i> Est. 2023 to 2026</span>
                     </div>
 
                     <!-- Action Buttons -->
                     <div class="d-flex align-items-center gap-3 flex-wrap hero-btn-group hero-load-item delay-3">
                         <a href="{{ route('collections') }}" class="hero-shop-btn">
-                            Shop Now
+                            Explore Collections
                             <i class="bi bi-arrow-right ms-2"></i>
                         </a>
-                        <a href="{{ route('collections') }}" class="hero-outline-btn">
-                            <i class="bi bi-gem me-2"></i> Explore Collection
+                        <a href="{{ route('contact') }}" class="hero-outline-btn">
+                            <i class="bi bi-envelope me-2"></i> Contact Us
                         </a>
+                       
                     </div>
 
                     <!-- Embedded Feature Strip -->
@@ -362,7 +499,7 @@
                 <div class="section-header-luxury mb-0 text-start" style="text-align: left !important;">
                     <span class="section-eyebrow-gold">Curated Favorites</span>
                     <h2 class="section-title-luxury mb-2">Best Selling Churidar Ensembles</h2>
-                    <p class="section-subtitle-luxury mb-0">
+                    <p class="section-subtitle-luxury p-0  m-0 mb-0">
                         Cherished by our discerning patrons for festive galas, weddings, and grand celebrations.
                     </p>
                 </div>
@@ -737,150 +874,115 @@
         </div>
     </section>
 
-    <!-- ===================== 9. CUSTOMER REVIEWS ===================== -->
-    <section class="reviews-section-luxury section-bg-ivory luxury-section-pad" id="reviews" aria-label="Customer Reviews">
+    <!-- ===================== 9. OUR GENUINE BRAND STORY (2023 - 2026) ===================== -->
+    <section class="story-highlight-section section-bg-ivory luxury-section-pad" id="story" aria-label="Our Journey - Saras Boutique">
         <div class="container">
-            <div class="reviews-header-wrap reveal">
-                <div class="section-header-luxury mb-0 text-start" style="text-align: left !important;">
-                    <span class="section-eyebrow-gold">Voices of Elegance</span>
-                    <h2 class="section-title-luxury mb-2">What Our Patrons Say</h2>
-                    <p class="section-subtitle-luxury mb-0">
-                        Over 12,000+ discerning women celebrate life's most cherished milestones with Sara's Boutique.
-                    </p>
-                </div>
-                <div class="reviews-nav-controls">
-                    <button class="review-nav-btn" id="reviewsPrev" aria-label="Previous review">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="review-nav-btn" id="reviewsNext" aria-label="Next review">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="swiper reviews-swiper reveal delay-1" id="reviewsSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Review Slide 1 -->
-                    <div class="swiper-slide">
-                        <article class="review-card-luxury">
-                            <div class="review-top-bar">
-                                <span class="review-occasion-pill"><i class="bi bi-gem me-1"></i> Wedding Wear Edit</span>
-                                <span class="review-quote-icon"><i class="bi bi-quote"></i></span>
-                            </div>
-                            <div class="review-stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="review-product-tag">
-                                <i class="bi bi-bag-check-fill"></i> Purchased: Royal Rose Pink Zari Churidar Set
-                            </div>
-                            <p class="review-quote-text">
-                                "The Rose Pink Zari set was the absolute highlight of my sister's wedding! The pure silk is so rich and the intricate zari work looks genuinely royal. The custom fit was flawless."
-                            </p>
-                            <div class="review-author-wrap">
-                                <img src="{{ asset('assets/img/card_pink.jpg') }}" alt="Ananya Roy" class="review-avatar-img" loading="lazy">
-                                <div class="review-author-info">
-                                    <span class="review-author-name">Ananya Roy</span>
-                                    <span class="review-author-city">Mumbai, Maharashtra</span>
-                                    <span class="badge-verified-buyer"><i class="bi bi-patch-check-fill"></i> Verified Patron</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Review Slide 2 -->
-                    <div class="swiper-slide">
-                        <article class="review-card-luxury">
-                            <div class="review-top-bar">
-                                <span class="review-occasion-pill"><i class="bi bi-sparkles me-1"></i> Festive Gala Edit</span>
-                                <span class="review-quote-icon"><i class="bi bi-quote"></i></span>
-                            </div>
-                            <div class="review-stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="review-product-tag">
-                                <i class="bi bi-bag-check-fill"></i> Purchased: Peacock Blue Handloom Banarasi Set
-                            </div>
-                            <p class="review-quote-text">
-                                "Unbelievable craftsmanship! The silk dupatta feels like a whisper, soft yet weighted with authentic zardozi borders. Sara's Boutique has completely redefined luxury ethnic shopping for me."
-                            </p>
-                            <div class="review-author-wrap">
-                                <img src="{{ asset('assets/img/card_teal.jpg') }}" alt="Priya Sundaram" class="review-avatar-img" loading="lazy">
-                                <div class="review-author-info">
-                                    <span class="review-author-name">Priya Sundaram</span>
-                                    <span class="review-author-city">Bengaluru, Karnataka</span>
-                                    <span class="badge-verified-buyer"><i class="bi bi-patch-check-fill"></i> Verified Patron</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Review Slide 3 -->
-                    <div class="swiper-slide">
-                        <article class="review-card-luxury">
-                            <div class="review-top-bar">
-                                <span class="review-occasion-pill"><i class="bi bi-stars me-1"></i> Diwali Special</span>
-                                <span class="review-quote-icon"><i class="bi bi-quote"></i></span>
-                            </div>
-                            <div class="review-stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="review-product-tag">
-                                <i class="bi bi-bag-check-fill"></i> Purchased: Emerald Green Georgette Kalidar Anarkali
-                            </div>
-                            <p class="review-quote-text">
-                                "Ordered the emerald green suit for Diwali, and I received countless compliments all evening! Delivered in a fragrant gold keepsake box. 10/10 experience in every sense."
-                            </p>
-                            <div class="review-author-wrap">
-                                <img src="{{ asset('assets/img/card_green.jpg') }}" alt="Divya Malhotra" class="review-avatar-img" loading="lazy">
-                                <div class="review-author-info">
-                                    <span class="review-author-name">Divya Malhotra</span>
-                                    <span class="review-author-city">New Delhi</span>
-                                    <span class="badge-verified-buyer"><i class="bi bi-patch-check-fill"></i> Verified Patron</span>
-                                </div>
-                            </div>
-                        </article>
+            <div class="row align-items-center g-4 g-lg-5">
+                <div class="col-12 col-lg-5">
+                    <div class="position-relative reveal-left">
+                        <div class="rounded-4 overflow-hidden shadow-lg border border-warning border-opacity-25" style="aspect-ratio: 4/5;">
+                            <img src="{{ asset('assets/img/offbanner.png') }}" alt="Saras Boutique — Handpicked Women's Fashion in Puducherry" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 m-3 p-3 rounded-3 shadow text-white" style="background: rgba(24, 0, 38, 0.92); border: 1px solid var(--gold, #c5a059); max-width: 260px;">
+                            <span class="d-block small text-gold fw-semibold"><i class="bi bi-clock-history me-1"></i> Established 2023</span>
+                            <span class="d-block fw-bold fs-6">Home Venture to Boutique Shop (2026)</span>
+                            <span class="small text-white-50">Shanmugapuram, Puducherry</span>
+                        </div>
                     </div>
                 </div>
-                <div class="swiper-pagination reviews-swiper-pagination"></div>
+
+                <div class="col-12 col-lg-7">
+                    <div class="reveal-right ps-lg-3">
+                        <span class="section-eyebrow-gold">OUR GENUINE STORY</span>
+                        <h2 class="section-title-luxury mb-3" style="text-align: left !important;">
+                            From Passionate Home Roots<br>
+                            <span class="title-italic-gold">To Our Boutique Shop in 2026</span>
+                        </h2>
+                        <p class="text-secondary leading-relaxed mb-3">
+                            Saras Boutique began its journey in <strong>2023</strong> as a dedicated home-based venture in Puducherry, born out of an authentic passion for women's ethnic fashion, handpicked textiles, and personalized styling care.
+                        </p>
+                        <p class="text-secondary leading-relaxed mb-4">
+                            Through the warmth and continued trust of our customers, our humble beginnings developed step-by-step into a full-fledged <strong>boutique shop by 2026</strong>. Today, Saras Boutique in Shanmugapuram stands as a welcoming destination where every woman finds grace, comfort, and personalized attention.
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-3 border bg-white d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white" style="width: 44px; height: 44px; background: var(--dark-purple, #180026);">
+                                        <i class="bi bi-house-heart text-gold fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Started in 2023</h6>
+                                        <small class="text-muted">Home-based boutique venture</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-3 border bg-white d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white" style="width: 44px; height: 44px; background: var(--dark-purple, #180026);">
+                                        <i class="bi bi-shop text-gold fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Boutique Shop in 2026</h6>
+                                        <small class="text-muted">Shanmugapuram, Puducherry</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                            <a href="{{ route('about') }}" class="hero-shop-btn">
+                                <span>Read Our Full Story</span>
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            <a href="https://wa.me/919442634491?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20Saras%20Boutique%20collections." target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-whatsapp"></i>
+                                <span>Enquire on WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== 10. INSTAGRAM GALLERY ===================== -->
-    <section class="instagram-section-luxury section-bg-white luxury-section-pad" id="instagram" aria-label="Instagram Gallery">
+  
+
+    <!-- ===================== 11. FASHION LOOKBOOK GALLERY ===================== -->
+    <section class="instagram-section-luxury section-bg-ivory luxury-section-pad" id="lookbook-gallery" aria-label="Fashion Lookbook Gallery">
         <div class="container">
             <div class="section-header-luxury reveal">
-                <span class="section-eyebrow-gold">Social Lookbook</span>
-                <h2 class="section-title-luxury">Follow @SarasBoutiqueLuxury</h2>
+                <span class="section-eyebrow-gold">Fashion Lookbook</span>
+                <h2 class="section-title-luxury">Saras Boutique Lookbook</h2>
                 <p class="section-subtitle-luxury">
-                    Tag #SarasMuse on Instagram to be featured in our official royal style gallery.
+                    A glimpse into our thoughtfully curated silhouettes, delicate zari borders, and festive drapes.
                 </p>
             </div>
 
             <div class="insta-grid-luxury stagger-group">
-                <a href="https://instagram.com" target="_blank" class="insta-photo-card stagger-item" aria-label="View Instagram Post 1">
-                    <img src="{{ asset('assets/img/card_purple.jpg') }}" alt="Sara's Boutique Instagram Post" loading="lazy">
-                    <div class="insta-hover-overlay"><i class="bi bi-instagram"></i></div>
+                <a href="{{ route('collections') }}" class="insta-photo-card stagger-item" aria-label="View Saras Boutique Collection 1">
+                    <img src="{{ asset('assets/img/card_purple.jpg') }}" alt="Saras Boutique Royal Velvet Churidar Set" loading="lazy">
+                    <div class="insta-hover-overlay"><i class="bi bi-eye"></i></div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="insta-photo-card stagger-item" aria-label="View Instagram Post 2">
-                    <img src="{{ asset('assets/img/card_pink.jpg') }}" alt="Sara's Boutique Instagram Post" loading="lazy">
-                    <div class="insta-hover-overlay"><i class="bi bi-instagram"></i></div>
+                <a href="{{ route('collections') }}" class="insta-photo-card stagger-item" aria-label="View Saras Boutique Collection 2">
+                    <img src="{{ asset('assets/img/card_pink.jpg') }}" alt="Saras Boutique Gulzar Rose Silk Churidar" loading="lazy">
+                    <div class="insta-hover-overlay"><i class="bi bi-eye"></i></div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="insta-photo-card stagger-item" aria-label="View Instagram Post 3">
-                    <img src="{{ asset('assets/img/card_green.jpg') }}" alt="Sara's Boutique Instagram Post" loading="lazy">
-                    <div class="insta-hover-overlay"><i class="bi bi-instagram"></i></div>
+                <a href="{{ route('collections') }}" class="insta-photo-card stagger-item" aria-label="View Saras Boutique Collection 3">
+                    <img src="{{ asset('assets/img/card_green.jpg') }}" alt="Saras Boutique Emerald Green Anarkali" loading="lazy">
+                    <div class="insta-hover-overlay"><i class="bi bi-eye"></i></div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="insta-photo-card stagger-item" aria-label="View Instagram Post 4">
-                    <img src="{{ asset('assets/img/card_mustard.jpg') }}" alt="Sara's Boutique Instagram Post" loading="lazy">
-                    <div class="insta-hover-overlay"><i class="bi bi-instagram"></i></div>
+                <a href="{{ route('collections') }}" class="insta-photo-card stagger-item" aria-label="View Saras Boutique Collection 4">
+                    <img src="{{ asset('assets/img/card_mustard.jpg') }}" alt="Saras Boutique Mustard Zari Salwar" loading="lazy">
+                    <div class="insta-hover-overlay"><i class="bi bi-eye"></i></div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="insta-photo-card stagger-item" aria-label="View Instagram Post 5">
-                    <img src="{{ asset('assets/img/card_teal.jpg') }}" alt="Sara's Boutique Instagram Post" loading="lazy">
-                    <div class="insta-hover-overlay"><i class="bi bi-instagram"></i></div>
+                <a href="{{ route('collections') }}" class="insta-photo-card stagger-item" aria-label="View Saras Boutique Collection 5">
+                    <img src="{{ asset('assets/img/card_teal.jpg') }}" alt="Saras Boutique Peacock Teal Silk Suit" loading="lazy">
+                    <div class="insta-hover-overlay"><i class="bi bi-eye"></i></div>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="insta-photo-card stagger-item" aria-label="View Instagram Post 6">
-                    <img src="{{ asset('assets/img/offbanner.png') }}" alt="Sara's Boutique Instagram Post" loading="lazy">
-                    <div class="insta-hover-overlay"><i class="bi bi-instagram"></i></div>
+                <a href="{{ route('collections') }}" class="insta-photo-card stagger-item" aria-label="View Saras Boutique Collection 6">
+                    <img src="{{ asset('assets/img/offbanner.png') }}" alt="Saras Boutique Festive Edit" loading="lazy">
+                    <div class="insta-hover-overlay"><i class="bi bi-eye"></i></div>
                 </a>
             </div>
         </div>
@@ -932,6 +1034,28 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SARAS BOUTIQUE OPENING POPUP MODAL ===================== -->
+    <div class="modal fade saras-opening-modal p-0" id="sarasOpeningModal" tabindex="-1" aria-labelledby="sarasOpeningModalLabel" aria-hidden="true" data-bs-backdrop="true">
+        <div class="modal-dialog modal-dialog-centered p-0">
+            <div class="modal-content opening-popup-content">
+                <!-- Close Button with Icon -->
+                <button type="button" class="opening-popup-close-btn" data-bs-dismiss="modal" aria-label="Close Announcement" id="sarasOpeningCloseBtn">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+
+                <!-- Modal Body: Image Only -->
+                <div class="modal-body opening-popup-body p-0">
+                    <a href="{{ route('collections') }}" class="opening-popup-link" title="Explore Saras Boutique Collections">
+                        <img src="{{ asset('assets/img/openingpop.png') }}" 
+                             alt="Saras Boutique Grand Opening Announcement" 
+                             class="opening-popup-img img-fluid"
+                             loading="eager">
+                    </a>
                 </div>
             </div>
         </div>
@@ -1058,36 +1182,68 @@
             },
         });
 
-        // Reviews Swiper
-        new Swiper('#reviewsSwiper', {
-            slidesPerView: 1.08,
-            spaceBetween: 14,
-            grabCursor: true,
-            loop: true,
-            speed: 700,
-            pagination: {
-                el: '.reviews-swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                prevEl: '#reviewsPrev',
-                nextEl: '#reviewsNext',
-            },
-            breakpoints: {
-                320: { slidesPerView: 1.08, spaceBetween: 12 },
-                576: { slidesPerView: 1.5, spaceBetween: 16 },
-                768: { slidesPerView: 2, spaceBetween: 18 },
-                992: { slidesPerView: 2.5, spaceBetween: 20 },
-                1200: { slidesPerView: 3, spaceBetween: 24 },
-                1400: { slidesPerView: 3, spaceBetween: 24 },
-            },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-        });
+        // Reviews Swiper (if present)
+        if (document.querySelector('#reviewsSwiper')) {
+            new Swiper('#reviewsSwiper', {
+                slidesPerView: 1.08,
+                spaceBetween: 14,
+                grabCursor: true,
+                loop: true,
+                speed: 700,
+                pagination: {
+                    el: '.reviews-swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    prevEl: '#reviewsPrev',
+                    nextEl: '#reviewsNext',
+                },
+                breakpoints: {
+                    320: { slidesPerView: 1.08, spaceBetween: 12 },
+                    576: { slidesPerView: 1.5, spaceBetween: 16 },
+                    768: { slidesPerView: 2, spaceBetween: 18 },
+                    992: { slidesPerView: 2.5, spaceBetween: 20 },
+                    1200: { slidesPerView: 3, spaceBetween: 24 },
+                    1400: { slidesPerView: 3, spaceBetween: 24 },
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+            });
+        }
     });
+
+    // ── Saras Boutique Grand Opening Popup Modal ─────────
+    (function() {
+        function triggerSarasOpeningModal() {
+            const modalEl = document.getElementById('sarasOpeningModal');
+            if (!modalEl) return;
+            try {
+                if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                    modalEl.addEventListener('show.bs.modal', () => { document.body.style.paddingRight = '0px'; });
+                    modalEl.addEventListener('shown.bs.modal', () => { document.body.style.paddingRight = '0px'; });
+                    modalEl.addEventListener('hidden.bs.modal', () => { document.body.style.paddingRight = '0px'; });
+
+                    const myModal = bootstrap.Modal.getOrCreateInstance(modalEl, {
+                        backdrop: true,
+                        keyboard: true
+                    });
+                    myModal.show();
+                }
+            } catch (err) {
+                console.warn('Saras opening popup notice:', err);
+            }
+        }
+
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(triggerSarasOpeningModal, 500);
+        } else {
+            document.addEventListener('DOMContentLoaded', () => setTimeout(triggerSarasOpeningModal, 500));
+            window.addEventListener('load', () => setTimeout(triggerSarasOpeningModal, 300));
+        }
+    })();
 </script>
 @endpush

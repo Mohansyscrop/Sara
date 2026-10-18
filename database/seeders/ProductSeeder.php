@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                 'meta_description' => 'Buy handcrafted Royal Rose Pink Zari Embroidered Pure Silk Churidar Set with Silk Mark certification.',
                 'meta_keywords' => 'pure silk churidar, pink zari suit, festival silk suits, sara boutique',
                 'canonical_url' => url('/product/royal-rose-pink-zari-churidar'),
-                'status' => 'published',
+                'status' => '0',
                 'sort_order' => 1,
             ],
             [

@@ -63,6 +63,23 @@
             @endcan
         </ul>
 
+        <div class="menu-label px-3 py-2 text-uppercase small fw-bold" style="font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 1.5px; color: #d4af37 !important;">Orders &amp; Inquiries</div>
+        <ul class="nav flex-column gap-1 mb-3">
+            @if(auth()->check() && (auth()->user()->hasRole('Super Admin') || auth()->user()->hasRole('Admin') || auth()->user()->can('view orders')))
+            <li class="nav-item">
+                <a class="nav-link admin-nav-link {{ request()->routeIs('admin.orders.*') ? 'active' : '' }} d-flex align-items-center justify-content-between" href="{{ route('admin.orders.index') }}">
+                    <span><i class="bi bi-bag-heart-fill me-2"></i> Direct Orders</span>
+                    @php
+                        $newOrdersBadge = \App\Models\Order::where('order_status', 'new')->count();
+                    @endphp
+                    @if($newOrdersBadge > 0)
+                        <span class="badge rounded-pill bg-danger shadow-sm px-2 py-1" style="font-size: 0.7rem; font-family: 'Poppins', sans-serif;">{{ $newOrdersBadge }} new</span>
+                    @endif
+                </a>
+            </li>
+            @endif
+        </ul>
+
         <div class="menu-label px-3 py-2 text-uppercase small fw-bold" style="font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 1.5px; color: #d4af37 !important;">Concierge Care</div>
         <ul class="nav flex-column gap-1 mb-3">
             @can('view contacts')

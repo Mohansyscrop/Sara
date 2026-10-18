@@ -10,12 +10,12 @@ class SettingController extends Controller
     public function index()
     {
         $settings = [
-            'store_name' => "Sara's Boutique",
-            'store_tagline' => "Luxury Indian Ethnic Fashion & Designer Churidar Sets",
-            'helpline_phone' => "+91 98765 43210",
-            'whatsapp_phone' => "919876543210",
-            'contact_email' => "concierge@sarasboutique.com",
-            'store_address' => "Jubilee Hills, Hyderabad, Telangana - 500033",
+            'store_name' => "Saras Boutique",
+            'store_tagline' => "Women's Boutique — Fashion · Elegance · You",
+            'helpline_phone' => "+91 94426 34491",
+            'whatsapp_phone' => "919442634491",
+            'contact_email' => "Sarasboutique2026@gmail.com",
+            'store_address' => "No. 1, 2nd Mani Road, 4th Cross Street, Manikachettyar Nagar, Shanmugapuram, Puducherry – 605009, India",
             'promotional_code' => "FESTIVE25",
             'promotional_discount' => "25%",
             'silk_mark_certified' => "Yes",

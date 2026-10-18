@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', ($activeCategory ? $activeCategory->name . ' | ' : '') . "Collections | Sara's Boutique - Luxury Indian Ethnic Fashion")
-@section('meta_description', $activeCategory && $activeCategory->meta_description ? $activeCategory->meta_description : "Explore our handpicked collection of luxury Churidar Ensembles, royal Anarkalis, and designer Salwar Suits at Sara's Boutique. Handcrafted pure silk ethnic couture.")
-@section('meta_keywords', "Churidar Ensembles, Indian Ethnic Wear, Designer Salwar Suits, Royal Anarkali, Silk Churidar Sets, Sara's Boutique Collection")
-@section('og_title', ($activeCategory ? $activeCategory->name . ' | ' : '') . "Sara's Boutique Collection")
+@section('title', ($activeCategory ? $activeCategory->name . ' | ' : '') . "Collections | Saras Boutique Puducherry - Handpicked Women's Fashion")
+@section('meta_description', $activeCategory && $activeCategory->meta_description ? $activeCategory->meta_description : "Explore handpicked churidar sets, sarees, and women's fashion at Saras Boutique in Shanmugapuram, Puducherry. Authentic collections & direct WhatsApp enquiry.")
+@section('meta_keywords', "Saras Boutique Puducherry, Women's Boutique Puducherry, Churidar Ensembles, Shanmugapuram Boutique, Ethnic Wear Puducherry")
+@section('og_title', ($activeCategory ? $activeCategory->name . ' | ' : '') . "Saras Boutique Collections - Puducherry")
 @section('og_image', asset('assets/img/breadcrumbs.png'))
 
 @push('styles')
@@ -320,15 +320,15 @@
                                 </select>
                             </div> -->
 
-                            <!-- Grid Mode Toggles (4-col vs 3-col) -->
+                            <!-- Grid Mode Toggles (3-col vs 4-col) -->
                             <div class="d-none d-xl-flex align-items-center gap-1">
-                                <button type="button" class="grid-view-btn active" id="grid4Btn"
-                                    onclick="setGridCols(4)" title="4 Columns Grid">
-                                    <i class="bi bi-grid-fill"></i>
-                                </button>
-                                <button type="button" class="grid-view-btn" id="grid3Btn" onclick="setGridCols(3)"
+                                <button type="button" class="grid-view-btn active" id="grid3Btn" onclick="setGridCols(3)"
                                     title="3 Columns Grid">
                                     <i class="bi bi-grid-3x3-gap-fill"></i>
+                                </button>
+                                <button type="button" class="grid-view-btn" id="grid4Btn"
+                                    onclick="setGridCols(4)" title="4 Columns Grid">
+                                    <i class="bi bi-grid-fill"></i>
                                 </button>
                             </div>
                         </div>
@@ -337,7 +337,7 @@
                     <!-- Products Grid Container -->
                     <div class="row g-3 g-xl-4" id="productsGridContainer">
                         @forelse($products as $product)
-                            <div class="col-12 col-sm-6 col-md-6 col-xl-3 product-grid-item" data-grid-col="4">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 product-grid-item" data-grid-col="3">
                                 <article class="collection-product-card" data-id="{{ $product->id }}">
                                     <!-- Image Wrapper -->
                                     <div class="c-card-img-wrap">
@@ -364,7 +364,7 @@
 
                                         <!-- Quick View Action Button -->
                                         <button type="button" class="card-quick-add" 
-                                            onclick="openQuickViewModal('{{ addslashes($product->name) }}', '₹ {{ number_format($product->price) }}', '₹ {{ number_format($product->mrp ?? $product->price * 1.25) }}', '{{ $mainImg }}', '{{ (int)$product->discount }}%', '{{ route('product.show', $product->slug) }}')">
+                                            onclick="openQuickViewModal('{{ addslashes($product->name) }}', '₹ {{ number_format($product->price) }}', '₹ {{ number_format($product->mrp ?? $product->price * 1.25) }}', '{{ $mainImg }}', '{{ (int)$product->discount }}%', '{{ route('product.show', $product->slug) }}', '{{ addslashes($product->category->name ?? 'Handpicked Collection') }}', '{{ addslashes($product->fabric ?? 'Pure Handloom Silk') }}')">
                                             <i class="bi bi-eye"></i> Quick View
                                         </button>
                                     </div>
@@ -404,9 +404,17 @@
                                             <span class="c-swatch-dot" style="background-color: #1c4e80;" onclick="switchCardColor(this)"></span>
                                         </div>
 
-                                        <a href="{{ route('product.show', $product->slug) }}" class="btn-card-add-cart text-decoration-none">
-                                            <i class="bi bi-bag-check"></i> View Details
-                                        </a>
+                                        <div class="d-flex gap-2 mt-2">
+                                            <a href="{{ route('product.show', $product->slug) }}" class="btn-card-add-cart text-decoration-none flex-grow-1 text-center py-2">
+                                                <i class="bi bi-eye"></i> Details
+                                            </a>
+                                            @php
+                                                $waProductText = urlencode("Hi Saras Boutique, I visited your website and would like to enquire about: {$product->name} (Price: ₹" . number_format($product->price) . "). Is this available?");
+                                            @endphp
+                                            <a href="https://wa.me/919442634491?text={{ $waProductText }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill px-3 d-inline-flex align-items-center justify-content-center" style="border-color: #25d366; color: #25d366;" title="Enquire on WhatsApp">
+                                                <i class="bi bi-whatsapp"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </article>
                             </div>
@@ -487,15 +495,18 @@
 
                             <!-- Narrative Subtext -->
                             <p class="narrative-subtext">
-                                Traditional styles, modern vibes — find the outfit that feels like you. Handcrafted in
-                                pure mulberry silk with bespoke gold zardozi.
+                                Contemporary ethnic elegance and timeless classic styles handpicked for your special celebrations. Visit our boutique in Shanmugapuram, Puducherry or order with direct WhatsApp assistance.
                             </p>
 
                             <!-- Deep Royal Purple Pill Button -->
-                            <div>
+                            <div class="d-flex flex-wrap gap-2">
                                 <a href="#productsGridContainer" class="btn-explore-pill text-decoration-none">
                                     <span>Explore Collection</span>
                                     <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="https://wa.me/919442634491?text=Hi%2C%20I%20visited%20the%20Saras%20Boutique%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 text-decoration-none">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <span>WhatsApp Enquiry</span>
                                 </a>
                             </div>
 
@@ -539,34 +550,115 @@
         </div>
     </main>
 
-    <!-- ── QUICK VIEW MODAL ── -->
+    <!-- ── ATTRACTIVE LUXURY QUICK VIEW MODAL ── -->
     <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-4 border-0 shadow-lg overflow-hidden">
-                <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4 pt-0">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-5 text-center">
-                            <img id="qvImage" src="" alt="Quick View Image" class="img-fluid rounded-3 shadow-sm" style="max-height: 380px; object-fit: cover;">
-                        </div>
-                        <div class="col-md-7">
-                            <span class="badge bg-danger rounded-pill px-3 py-1 mb-2" id="qvDiscount"></span>
-                            <h3 class="font-serif mb-2" id="qvTitle" style="font-family: var(--heading-font);"></h3>
-                            <div class="d-flex align-items-center gap-3 mb-3">
-                                <span class="fs-4 fw-bold text-dark" id="qvPrice"></span>
-                                <span class="text-decoration-line-through text-muted" id="qvOldPrice"></span>
+            <div class="modal-content qv-luxury-dialog position-relative">
+                
+                <!-- Close Button with Smooth Rotate Glow -->
+                <button type="button" class="qv-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+
+                <div class="modal-body p-4 p-md-5">
+                    <div class="row g-4 g-lg-5 align-items-center">
+                        
+                        <!-- Left: Product Image Stage -->
+                        <div class="col-md-5">
+                            <div class="qv-image-stage position-relative">
+                                <span class="qv-artisan-badge">
+                                    <i class="bi bi-gem text-gold me-1"></i> Saras Exclusive
+                                </span>
+                                <img id="qvImage" src="" alt="Quick View Product" class="qv-img">
                             </div>
-                            <p class="text-muted small mb-4">Handcrafted pure mulberry silk with bespoke gold zardozi embroidery. Complete ethnic set.</p>
-                            <div class="d-flex gap-2">
-                                <a href="#" id="qvDetailLink" class="btn btn-dark rounded-pill px-4 py-2 flex-grow-1 text-decoration-none">
-                                    View Full Details <i class="bi bi-arrow-right ms-1"></i>
+                        </div>
+
+                        <!-- Right: Luxury Product Information -->
+                        <div class="col-md-7">
+                            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+                                <span class="qv-category-pill" id="qvCategory">Handpicked Silk Collection</span>
+                                <span class="qv-discount-pill" id="qvDiscount">SAVE 22%</span>
+                            </div>
+
+                            <h3 class="qv-product-title" id="qvTitle">Peacock Blue Handloom Banarasi Silk Churidar Set</h3>
+
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="qv-stars text-gold">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <span class="qv-rating-text">4.9 (24+ verified reviews)</span>
+                                <span class="qv-dot-sep">•</span>
+                                <span class="qv-stock-badge"><i class="bi bi-check2-circle me-1"></i>In Stock</span>
+                            </div>
+
+                            <!-- Pricing Block -->
+                            <div class="qv-price-card mb-3">
+                                <div class="d-flex align-items-baseline gap-3">
+                                    <span class="qv-curr-price" id="qvPrice">₹ 22,499</span>
+                                    <span class="qv-old-price" id="qvOldPrice">₹ 28,999</span>
+                                    <span class="qv-tax-note">Inclusive of all taxes</span>
+                                </div>
+                            </div>
+
+                           
+
+                            <!-- Highlights Mini-Cards -->
+                            <div class="qv-highlights-grid mb-3">
+                                <div class="qv-highlight-chip">
+                                    <i class="bi bi-patch-check-fill text-gold"></i>
+                                    <div>
+                                        <span class="qv-chip-label">Fabric</span>
+                                        <strong class="qv-chip-val" id="qvFabric">Banarasi Silk</strong>
+                                    </div>
+                                </div>
+                                <div class="qv-highlight-chip">
+                                    <i class="bi bi-geo-alt-fill text-gold"></i>
+                                    <div>
+                                        <span class="qv-chip-label">Boutique Trial</span>
+                                        <strong class="qv-chip-val">Shanmugapuram Store</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Size Selector Preview -->
+                            <div class="qv-size-wrap mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="qv-size-label">Select Size</span>
+                                    <span class="qv-size-hint"><i class="bi bi-rulers me-1"></i>Standard Fit</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="qv-size-btn active" onclick="selectQvSize(this)">S</button>
+                                    <button type="button" class="qv-size-btn" onclick="selectQvSize(this)">M</button>
+                                    <button type="button" class="qv-size-btn" onclick="selectQvSize(this)">L</button>
+                                    <button type="button" class="qv-size-btn" onclick="selectQvSize(this)">XL</button>
+                                    <button type="button" class="qv-size-btn" onclick="selectQvSize(this)">XXL</button>
+                                </div>
+                            </div>
+
+                            <!-- Action CTAs -->
+                            <div class="d-flex flex-column flex-sm-row gap-2 mb-3">
+                                <a href="#" id="qvDetailLink" class="qv-btn-primary flex-grow-1 text-decoration-none">
+                                    <span>View Full Details</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="#" id="qvWaLink" target="_blank" rel="noopener noreferrer" class="qv-btn-whatsapp text-decoration-none">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <span>WhatsApp Order</span>
                                 </a>
                             </div>
+
+                            <div class="qv-trust-footer">
+                                <i class="bi bi-shield-check text-gold me-1"></i> Try at Shanmugapuram Store &nbsp;•&nbsp; <i class="bi bi-chat-heart text-gold me-1"></i> Personalized Sizing Assistance
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -610,7 +702,7 @@
                 btn3?.classList.remove('active');
             } else {
                 items.forEach(el => {
-                    el.className = 'col-12 col-sm-6 col-md-6 col-xl-4 product-grid-item';
+                    el.className = 'col-12 col-sm-6 col-md-6 col-lg-4 product-grid-item';
                 });
                 btn3?.classList.add('active');
                 btn4?.classList.remove('active');
@@ -646,15 +738,31 @@
             showToast(`Added "${title}" to your shopping bag!`);
         }
 
-        function openQuickViewModal(title, price, oldPrice, imgUrl, discount, detailUrl) {
+        function openQuickViewModal(title, price, oldPrice, imgUrl, discount, detailUrl, category = 'Handpicked Ensemble', fabric = 'Pure Handloom Silk') {
             document.getElementById('qvTitle').textContent = title;
             document.getElementById('qvPrice').textContent = price;
             document.getElementById('qvOldPrice').textContent = oldPrice;
             document.getElementById('qvImage').src = imgUrl;
             document.getElementById('qvDiscount').textContent = `SAVE ${discount}`;
+            if (document.getElementById('qvCategory')) {
+                document.getElementById('qvCategory').textContent = category;
+            }
+            if (document.getElementById('qvFabric')) {
+                document.getElementById('qvFabric').textContent = fabric;
+            }
             document.getElementById('qvDetailLink').href = detailUrl;
+            const waMsg = encodeURIComponent(`Hi Saras Boutique, I am viewing "${title}" (${price}) on your website and would like to enquire about its availability and sizing.`);
+            const waEl = document.getElementById('qvWaLink');
+            if (waEl) {
+                waEl.href = `https://wa.me/919442634491?text=${waMsg}`;
+            }
             const modal = new bootstrap.Modal(document.getElementById('quickViewModal'));
             modal.show();
+        }
+
+        function selectQvSize(btn) {
+            document.querySelectorAll('.qv-size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
         }
     </script>
 @endpush

@@ -157,10 +157,10 @@ class AdminCrudTest extends TestCase
     {
         $response = $this->get('/admin/settings');
         $response->assertStatus(200);
-        $response->assertSee("Sara's Boutique");
+        $response->assertSee("Saras Boutique");
 
         $response = $this->post('/admin/settings', [
-            'store_name' => "Sara's Boutique",
+            'store_name' => "Saras Boutique",
         ]);
         $response->assertRedirect('/admin/settings');
     }
