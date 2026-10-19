@@ -30,7 +30,27 @@
 
     <!-- Stat Widgets Grid -->
     <div class="row g-3 mb-4">
-        <!-- Card 1: Total Products -->
+        <!-- Card 1: Direct Orders -->
+        <div class="col-6 col-lg-3">
+            <div class="stat-widget">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="text-muted small text-uppercase fw-semibold" style="letter-spacing: 0.75px; font-size: 0.72rem; font-family: 'Poppins', sans-serif;">Direct Orders</span>
+                    <div class="stat-icon-box" style="background: rgba(225, 29, 72, 0.12); color: #e11d48;">
+                        <i class="bi bi-bag-heart-fill"></i>
+                    </div>
+                </div>
+                <h3 class="mb-1" style="font-family: 'Playfair Display', Georgia, serif; color: #240038;">{{ $totalOrders }}</h3>
+                <div class="small text-muted">
+                    @if($newOrders > 0)
+                        <span class="text-danger fw-semibold"><i class="bi bi-bell-fill"></i> {{ $newOrders }} New Inquiries</span>
+                    @else
+                        <span class="text-success fw-semibold"><i class="bi bi-check-circle"></i> All Handled</span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Total Products -->
         <div class="col-6 col-lg-3">
             <div class="stat-widget">
                 <div class="d-flex align-items-center justify-content-between mb-2">
@@ -46,7 +66,7 @@
             </div>
         </div>
 
-        <!-- Card 2: Categories -->
+        <!-- Card 3: Categories -->
         <div class="col-6 col-lg-3">
             <div class="stat-widget">
                 <div class="d-flex align-items-center justify-content-between mb-2">
@@ -62,34 +82,18 @@
             </div>
         </div>
 
-        <!-- Card 3: Contact Enquiries -->
+        <!-- Card 4: Contact Enquiries -->
         <div class="col-6 col-lg-3">
             <div class="stat-widget">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <span class="text-muted small text-uppercase fw-semibold" style="letter-spacing: 0.75px; font-size: 0.72rem; font-family: 'Poppins', sans-serif;">New Enquiries</span>
-                    <div class="stat-icon-box" style="background: rgba(225, 29, 72, 0.1); color: #e11d48;">
+                    <div class="stat-icon-box" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
                         <i class="bi bi-envelope-heart-fill"></i>
                     </div>
                 </div>
                 <h3 class="mb-1" style="font-family: 'Playfair Display', Georgia, serif; color: #240038;">{{ $newContacts }}</h3>
                 <div class="small text-muted">
                     <span class="fw-semibold" style="color: #b8860b;">{{ $totalContacts }}</span> Total client inquiries
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4: Registered Users -->
-        <div class="col-6 col-lg-3">
-            <div class="stat-widget">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <span class="text-muted small text-uppercase fw-semibold" style="letter-spacing: 0.75px; font-size: 0.72rem; font-family: 'Poppins', sans-serif;">Staff Users</span>
-                    <div class="stat-icon-box" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-                </div>
-                <h3 class="mb-1" style="font-family: 'Playfair Display', Georgia, serif; color: #240038;">{{ $totalUsers }}</h3>
-                <div class="small text-muted">
-                    <span class="text-secondary fw-medium">Super Admin &amp; Staff</span>
                 </div>
             </div>
         </div>
@@ -119,6 +123,114 @@
                 </div>
                 <div style="height: 280px; position: relative;" class="d-flex align-items-center justify-content-center">
                     <canvas id="contactStatusChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Direct Orders Row -->
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+            <div class="card-custom">
+                <div class="card-header-custom d-flex align-items-center justify-content-between">
+                    <div>
+                        <h5 class="m-0" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: #240038;">
+                            <i class="bi bi-bag-heart-fill text-danger me-2"></i> Recent Direct Orders &amp; Inquiries
+                        </h5>
+                        <p class="text-muted small mb-0 mt-1">Real-time express checkout submissions captured from product pages</p>
+                    </div>
+                    <a href="{{ route('admin.orders.index') }}" class="btn btn-sm btn-gold fw-semibold shadow-sm">
+                        View All Direct Orders &rarr;
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-custom align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Client Details</th>
+                                <th>Ensemble / Product</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date &amp; Time</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($recentOrders as $ro)
+                                @php
+                                    $item = $ro->items->first();
+                                    $roImg = null;
+                                    if ($item) {
+                                        if ($item->product_image) {
+                                            $roImg = (str_starts_with($item->product_image, 'http') || str_starts_with($item->product_image, 'assets/')) 
+                                                ? asset($item->product_image) 
+                                                : asset('storage/' . $item->product_image);
+                                        } elseif ($item->product && $item->product->main_image) {
+                                            $roImg = $item->product->main_image_url;
+                                        }
+                                    }
+                                    if (!$roImg) $roImg = asset('assets/img/card_pink.jpg');
+                                @endphp
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('admin.orders.show', $ro->id) }}" class="fw-bold font-monospace text-decoration-none" style="color: #3b005a;">
+                                            {{ $ro->order_number }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold text-dark small">{{ $ro->customer_name }}</div>
+                                        <div class="text-muted" style="font-size: 0.75rem;">
+                                            <i class="bi bi-telephone me-1"></i>{{ $ro->customer_phone }} • {{ $ro->city }}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if($item)
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="{{ $roImg }}" alt="{{ $item->product_name }}" width="36" height="46" class="rounded object-fit-cover shadow-sm border">
+                                                <div>
+                                                    <div class="fw-semibold text-dark small text-truncate" style="max-width: 170px;" title="{{ $item->product_name }}">{{ $item->product_name }}</div>
+                                                    <div class="text-muted" style="font-size: 0.72rem;">{{ $item->size }} | {{ $item->color }} (Qty: {{ $item->quantity }})</div>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <span class="text-muted small">N/A</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <span class="fw-bold font-monospace" style="color: #b8860b;">₹{{ number_format($ro->total_amount, 2) }}</span>
+                                    </td>
+                                    <td>
+                                        @if($ro->order_status === 'new')
+                                            <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">New Lead</span>
+                                        @elseif($ro->order_status === 'processing')
+                                            <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1" style="color: #b8860b !important;">Processing</span>
+                                        @elseif($ro->order_status === 'confirmed')
+                                            <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1">Confirmed</span>
+                                        @elseif($ro->order_status === 'delivered')
+                                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">Delivered</span>
+                                        @else
+                                            <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 px-2 py-1">{{ ucfirst($ro->order_status) }}</span>
+                                        @endif
+                                    </td>
+                                    <td class="text-muted small">
+                                        {{ $ro->created_at->diffForHumans() }}
+                                    </td>
+                                    <td class="text-end">
+                                        <a href="{{ route('admin.orders.show', $ro->id) }}" class="btn btn-sm btn-outline-warning" style="border-color: #c5a059; color: #a17c38;" title="View Details">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center py-4 text-muted small">
+                                        <i class="bi bi-inbox me-1"></i> No direct orders placed yet.
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

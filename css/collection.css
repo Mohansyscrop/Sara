@@ -1274,3 +1274,314 @@
                 flex: 0 0 44%;
             }
         }
+
+        /* ==========================================================================
+           LUXURY QUICK VIEW MODAL
+           ========================================================================== */
+        .qv-luxury-dialog {
+            background: #ffffff;
+            border-radius: 22px;
+            border: 1.5px solid rgba(212, 175, 55, 0.45);
+            box-shadow: 0 25px 80px rgba(36, 0, 56, 0.3);
+            overflow: hidden;
+        }
+
+        .qv-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f7f3ed;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #240038;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.25s ease;
+        }
+
+        .qv-close-btn:hover {
+            background: #240038;
+            color: #ffd87a;
+            border-color: #ffd87a;
+            transform: rotate(90deg);
+        }
+
+        .qv-image-stage {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #f9f6f0;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 10px 30px rgba(36, 0, 56, 0.08);
+            aspect-ratio: 3/4;
+        }
+
+        .qv-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .qv-image-stage:hover .qv-img {
+            transform: scale(1.04);
+        }
+
+        .qv-artisan-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(36, 0, 56, 0.88);
+            backdrop-filter: blur(6px);
+            color: #ffffff;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .qv-category-pill {
+            background: #fbf5ea;
+            color: #9c731a;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .qv-discount-pill {
+            background: linear-gradient(135deg, #d11a48, #9c002c);
+            color: #ffffff;
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(209, 26, 72, 0.3);
+        }
+
+        .qv-product-title {
+            font-family: var(--heading-font, 'Playfair Display', Georgia, serif) !important;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #240038 !important;
+            line-height: 1.35;
+            margin-top: 0.35rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .qv-stars i {
+            font-size: 0.9rem;
+            color: #d4af37;
+        }
+
+        .qv-rating-text {
+            font-size: 0.8rem;
+            color: #5c4e62;
+            font-weight: 600;
+        }
+
+        .qv-dot-sep {
+            color: #cbbfd3;
+            font-size: 0.8rem;
+        }
+
+        .qv-stock-badge {
+            font-size: 0.76rem;
+            color: #128c7e;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .qv-price-card {
+            background: #faf6f0;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 10px 16px;
+        }
+
+        .qv-curr-price {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #240038;
+        }
+
+        .qv-old-price {
+            font-size: 1.1rem;
+            color: #8c7e92;
+            text-decoration: line-through;
+        }
+
+        .qv-tax-note {
+            font-size: 0.76rem;
+            color: #6a5a70;
+            margin-left: auto;
+        }
+
+        .qv-description {
+            font-size: 0.86rem;
+            color: #4b3e52;
+            line-height: 1.6;
+        }
+
+        .qv-highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .qv-highlight-chip {
+            background: #ffffff;
+            border: 1px solid #ede4d6;
+            border-radius: 10px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qv-highlight-chip i {
+            font-size: 1.1rem;
+        }
+
+        .qv-chip-label {
+            display: block;
+            font-size: 0.68rem;
+            color: #8c7e92;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+
+        .qv-chip-val {
+            display: block;
+            font-size: 0.8rem;
+            color: #240038;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .qv-size-wrap {
+            margin-top: 0.5rem;
+        }
+
+        .qv-size-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #240038;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .qv-size-hint {
+            font-size: 0.74rem;
+            color: #8c7e92;
+        }
+
+        .qv-size-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1.5px solid #dcd4c6;
+            color: #240038;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .qv-size-btn:hover {
+            border-color: #3b005a;
+            color: #3b005a;
+        }
+
+        .qv-size-btn.active {
+            background: #240038;
+            color: #ffd87a;
+            border-color: #240038;
+            box-shadow: 0 4px 10px rgba(36, 0, 56, 0.2);
+        }
+
+        .qv-btn-primary {
+            background: linear-gradient(135deg, #3B005A 0%, #200030 100%);
+            color: #ffffff !important;
+            border: 1.5px solid var(--gold);
+            border-radius: 50px;
+            padding: 12px 22px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 6px 18px rgba(59, 0, 90, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .qv-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(59, 0, 90, 0.35);
+            background: linear-gradient(135deg, #4d0075 0%, #2e0045 100%);
+        }
+
+        .qv-btn-whatsapp {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 22px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+            transition: all 0.25s ease;
+        }
+
+        .qv-btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(37, 211, 102, 0.38);
+        }
+
+        .qv-trust-footer {
+            font-size: 0.74rem;
+            color: #7b6e82;
+            text-align: center;
+            padding-top: 8px;
+            border-top: 1px dashed #e6decb;
+        }
+
+        @media (max-width: 575.98px) {
+            .qv-highlights-grid {
+                grid-template-columns: 1fr;
+            }
+            .qv-price-card .d-flex {
+                flex-wrap: wrap;
+            }
+            .qv-tax-note {
+                margin-left: 0;
+                width: 100%;
+            }
+        }

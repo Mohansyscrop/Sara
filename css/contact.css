@@ -643,79 +643,67 @@
             box-shadow: 0 6px 16px rgba(36, 0, 56, 0.2);
         }
 
-        /* Col 3: Map Layout with Custom Marker & Tooltip */
+        /* Col 3: Map Layout with Live Google Maps Iframe & Floating Boutique Badge */
         .location-map-wrap {
             position: relative;
-            min-height: 280px;
+            min-height: 380px;
             background: #EAF0E6;
             overflow: hidden;
         }
 
-        .location-map-bg-img {
+        .location-map-wrap iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            min-height: 380px;
+            border: 0;
             display: block;
         }
 
-        /* Floating Pin & Label */
-        .map-interactive-pin-box {
+        .map-floating-boutique-card {
             position: absolute;
-            top: 48%;
-            left: 36%;
-            transform: translate(-50%, -50%);
+            bottom: 14px;
+            left: 14px;
+            right: 14px;
+            max-width: 360px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 10px 14px;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            z-index: 3;
-            cursor: pointer;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(36, 0, 56, 0.2);
+            z-index: 10;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .map-custom-marker {
-            width: 32px;
-            height: 32px;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
+        .map-floating-boutique-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(36, 0, 56, 0.28);
+        }
+
+        .map-floating-pin-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
             background: #240038;
-            border: 2px solid var(--gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-            animation: bounceMarker 2.2s infinite ease-in-out;
+            flex-shrink: 0;
+            border: 1.5px solid var(--gold);
         }
 
-        .map-custom-marker i {
-            transform: rotate(45deg);
-            color: #FFFFFF;
-            font-size: 0.85rem;
-        }
-
-        @keyframes bounceMarker {
-            0%, 100% { transform: translateY(0) rotate(-45deg); }
-            50% { transform: translateY(-6px) rotate(-45deg); }
-        }
-
-        .map-floating-tooltip {
-            background: #FFFFFF;
-            padding: 0.65rem 0.95rem;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            white-space: nowrap;
-        }
-
-        .map-tooltip-title {
-            font-family: var(--sans-font);
-            font-size: 0.82rem;
+        .map-floating-title {
+            font-size: 0.86rem;
             font-weight: 700;
-            color: var(--dark-purple);
-            margin-bottom: 2px;
+            color: #240038;
         }
 
-        .map-tooltip-address {
+        .map-floating-subtitle {
             font-size: 0.72rem;
-            color: #6a5e70;
+            color: #634f6d;
             line-height: 1.25;
         }
 

@@ -82,22 +82,38 @@ class RolePermissionSeeder extends Seeder
             'view contacts', 'edit contacts',
         ]);
 
-        // Assign Super Admin role to existing users or create default admin if none
-        $users = User::all();
-        if ($users->isEmpty()) {
-            $user = User::create([
+        // Seed default admin accounts
+        $defaultAdmins = [
+            [
+                'name' => 'Super Admin',
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make('admin123'),
+                'type' => 'admin',
+                'status' => 1,
+            ],
+            [
+                'name' => 'Developer Admin',
+                'email' => 'developer@syscorp.in',
+                'password' => Hash::make('password123'),
+                'type' => 'admin',
+                'status' => 1,
+            ],
+            [
                 'name' => 'Developer',
                 'email' => 'developer@gmail.com',
                 'password' => Hash::make('password123'),
                 'type' => 'admin',
                 'status' => 1,
-            ]);
-            $user->assignRole('Super Admin');
-        } else {
-            foreach ($users as $u) {
-                if (!$u->hasRole('Super Admin')) {
-                    $u->assignRole('Super Admin');
-                }
+            ],
+        ];
+
+        foreach ($defaultAdmins as $adminData) {
+            $user = User::firstOrCreate(
+                ['email' => $adminData['email']],
+                $adminData
+            );
+            if (!$user->hasRole('Super Admin')) {
+                $user->assignRole('Super Admin');
             }
         }
     }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', "Our Story — About Sara's Boutique | Luxury Indian Ethnic Wear")
-@section('meta_description', "Discover Our Story at Sara's Boutique. Crafting elegance since day one with handcrafted luxury Indian ethnic fashion, royal Anarkalis, and pure mulberry silk churidar sets.")
+@section('title', "About Us — Our Journey | Saras Boutique Puducherry")
+@section('meta_description', "Learn about Saras Boutique in Puducherry. Started as a home-based business in 2023, developing into our boutique shop by 2026. Discover our fashion identity, curated ethnic wear, and customer-friendly experience.")
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('assets/css/collection.css') }}">
@@ -13,14 +13,12 @@
     <section class="collection-hero-banner" aria-label="Our Story About Banner">
         <div class="container position-relative">
             <div class="collection-hero-inner">
-                <span class="collection-eyebrow hero-load-item delay-1">OUR STORY</span>
-                <h1 class="collection-main-title hero-load-item delay-2">Our Story</h1>
-                <span class="collection-script-subtitle hero-load-item delay-3">Tradition Woven with Love</span>
+                <span class="collection-eyebrow hero-load-item delay-1">OUR JOURNEY • EST. 2023</span>
+                <h1 class="collection-main-title hero-load-item delay-2">About Saras Boutique</h1>
+                <span class="collection-script-subtitle hero-load-item delay-3">From Home-Based Roots to Boutique Shop</span>
 
                 <p class="collection-desc hero-load-item delay-4">
-                    Rooted in the timeless beauty of Indian craftsmanship, Sara's Boutique brings together
-                    heritage, artistry and contemporary elegance. Every ensemble is thoughtfully created to
-                    celebrate the woman who wears it and the traditions that inspire us.
+                    Founded in Puducherry, Saras Boutique began as a home-based business in 2023 and developed into our boutique shop by 2026. Every piece is thoughtfully curated to celebrate women with timeless grace, quality fabrics, and personalized care.
                 </p>
 
                 <div class="collection-ornate-divider hero-load-item delay-4" aria-hidden="true">
@@ -33,7 +31,7 @@
                     <ol class="collection-breadcrumbs">
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="crumb-sep">›</li>
-                        <li class="active">Our Story</li>
+                        <li class="active">About Us</li>
                     </ol>
                 </nav>
             </div>
@@ -41,7 +39,7 @@
     </section>
 
     <!-- ===================== 1. OUR JOURNEY (Exact Asymmetrical Scooped Arch Section) ===================== -->
-    <section class="journey-section" id="journey" aria-label="Our Journey - The Beginning of Sara's Boutique">
+    <section class="journey-section" id="journey" aria-label="Our Journey - The Beginning of Saras Boutique">
         <!-- Ambient Watermark Mandala in bottom-left background -->
         <svg class="ambient-mandala-bg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <circle cx="100" cy="100" r="90" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="5 3" />
@@ -163,19 +161,23 @@
                     <div class="story-text-wrap reveal-right">
                         <span class="eyebrow-journey">OUR JOURNEY</span>
                         <h2 class="heading-beginning">The Beginning</h2>
-                        <span class="script-boutique">of Sara's Boutique</span>
+                        <span class="script-boutique">of Saras Boutique</span>
 
                         <p class="body-narrative">
-                            Sara's Boutique was founded with a simple dream – to create a space where tradition
-                            meets modern elegance. What started as a small passion project has now grown into a
-                            trusted brand, loved by women across the country for its exquisite designs, quality
-                            craftsmanship and personalized service.
+                            Saras Boutique started in <strong>2023</strong> in Puducherry as a passionate home-based venture with a simple, genuine vision: to offer women elegant, comfortable, and beautifully crafted ethnic fashion with warm, personalized service.
+                        </p>
+                        <p class="body-narrative">
+                            Grounded in honest customer relationships and a discerning eye for quality fabrics, what began in our home blossomed step by step into a dedicated <strong>boutique shop by 2026</strong> in Shanmugapuram, Puducherry.
                         </p>
 
-                        <div>
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
                             <a href="{{ route('collections') }}" class="btn-journey-action">
-                                <span>Our Journey</span>
+                                <span>Explore Collections</span>
                                 <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="https://wa.me/919442634491?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Saras%20Boutique%20collections." target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-whatsapp"></i>
+                                <span>Enquire on WhatsApp</span>
                             </a>
                         </div>
                     </div>
@@ -320,21 +322,20 @@
     </section>
 
     <!-- ===================== 3. MEET OUR TEAM ===================== -->
-    <section class="team-section" id="meet-our-team" aria-label="Meet Our Team — Sara's Boutique">
+    <section class="team-section" id="meet-our-team" aria-label="Meet Our Team — Saras Boutique">
         <div class="container team-content-wrap">
             <div class="row align-items-center g-4 g-xl-5">
 
                 <div class="col-12 col-lg-5 col-xl-4">
                     <div class="team-story-wrap reveal-left">
-                        <span class="eyebrow-team">MEET OUR TEAM</span>
-                        <h2 class="heading-team">The People Behind<br>Sara's Boutique</h2>
+                        <span class="eyebrow-team">OUR BOUTIQUE HEART</span>
+                        <h2 class="heading-team">The Passion Behind<br>Saras Boutique</h2>
                         <p class="desc-team">
-                            Our team is a blend of creative designers, skilled artisans and dedicated professionals
-                            who work together to bring you the best in ethnic fashion.
+                            From our humble home-based start in 2023 to welcoming patrons into our boutique shop in 2026, our team is dedicated to offering personalized styling, thoughtful size assistance, and a warm shopping experience.
                         </p>
                         <div>
                             <a href="{{ route('contact') }}" class="btn-team-pill">
-                                <span>Meet Our Team</span>
+                                <span>Visit Our Boutique</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -344,11 +345,11 @@
                 <div class="col-12 col-lg-7 col-xl-8">
                     <div class="photo-gallery-wrap reveal-right">
                         <div class="photo-card-team">
-                            <img id="teamPhotoOne" src="{{ asset('assets/img/team_designers.jpg') }}" alt="Sara's Boutique Creative Design Team Collaborating" loading="lazy" />
+                            <img id="teamPhotoOne" src="{{ asset('assets/img/team_designers.jpg') }}" alt="Saras Boutique Fashion Styling & Curation" loading="lazy" />
                         </div>
 
                         <div class="photo-card-artisan">
-                            <img id="teamPhotoTwo" src="{{ asset('assets/img/team_artisan.jpg') }}" alt="Skilled Artisan Crafting Embroidery on Purple Silk" loading="lazy" />
+                            <img id="teamPhotoTwo" src="{{ asset('assets/img/team_artisan.jpg') }}" alt="Handcrafted Details and Zari Weaving" loading="lazy" />
                         </div>
 
                         <div class="calligraphy-accent-col">
@@ -368,7 +369,7 @@
         </div>
     </section>
 
-    <!-- ===================== 4. OUR MISSION & VISION + METRICS ===================== -->
+    <!-- ===================== 4. OUR MISSION & VISION + MILESTONES ===================== -->
     <section class="section-bg-ivory py-5 position-relative" id="mission" aria-label="Our Mission and Vision">
         <div class="container">
             <div class="row align-items-center g-4 g-lg-5">
@@ -376,7 +377,7 @@
                 <div class="col-lg-4 col-md-5">
                     <div class="mission-arch-container mx-auto reveal-left">
                         <div class="mission-arch-frame">
-                            <img src="{{ asset('assets/img/offbanner.png') }}" alt="Pure Silk Weaves and Royal Zardozi" class="w-100 h-100 object-fit-cover" loading="lazy">
+                            <img src="{{ asset('assets/img/offbanner.png') }}" alt="Saras Boutique Pure Weaves and Elegant Ensembles" class="w-100 h-100 object-fit-cover" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -386,7 +387,7 @@
                         <span class="section-eyebrow-gold">OUR MISSION &amp; VISION</span>
                         <h3 class="mission-heading-title mt-2 mb-2">Our Mission</h3>
                         <p class="mission-body-desc mb-3">
-                            To make every woman feel beautiful, confident and connected to her roots through elegant and comfortable ethnic wear.
+                            To make every woman feel confident, graceful, and cherished through handpicked, comfortable, and elegant ethnic wear that honors traditional beauty and modern lifestyles.
                         </p>
 
                         <div class="story-ornate-divider my-3" aria-hidden="true">
@@ -397,7 +398,7 @@
 
                         <h3 class="mission-heading-title mt-3 mb-2">Our Vision</h3>
                         <p class="mission-body-desc mb-0">
-                            To become a global brand known for timeless designs, exceptional quality and unmatched customer experience in ethnic fashion.
+                            To be a trusted and beloved women's fashion boutique in Puducherry, recognized for genuine care, high-quality collections, and memorable customer experiences.
                         </p>
                     </div>
                 </div>
@@ -408,15 +409,13 @@
                             <div class="mission-stat-badge">
                                 <div class="mission-stat-icon">
                                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#240038" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                        <circle cx="9" cy="7" r="4" />
-                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <div class="mission-stat-num">50K+</div>
-                                    <p class="mission-stat-lbl">Happy Customers</p>
+                                    <div class="mission-stat-num">2023</div>
+                                    <p class="mission-stat-lbl">Home-Based Beginning</p>
                                 </div>
                             </div>
                         </div>
@@ -425,12 +424,12 @@
                             <div class="mission-stat-badge">
                                 <div class="mission-stat-icon">
                                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#240038" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <div class="mission-stat-num">4.9/5</div>
-                                    <p class="mission-stat-lbl">Customer Rating</p>
+                                    <div class="mission-stat-num">2026</div>
+                                    <p class="mission-stat-lbl">Boutique Shop in Puducherry</p>
                                 </div>
                             </div>
                         </div>
@@ -439,26 +438,27 @@
                             <div class="mission-stat-badge">
                                 <div class="mission-stat-icon">
                                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#240038" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="mission-stat-num">10K+</div>
-                                    <p class="mission-stat-lbl">Unique Designs</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col stagger-item">
-                            <div class="mission-stat-badge">
-                                <div class="mission-stat-icon">
-                                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#240038" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <div class="mission-stat-num">100%</div>
-                                    <p class="mission-stat-lbl">Silk Mark Certified</p>
+                                    <p class="mission-stat-lbl">Handpicked Quality</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col stagger-item">
+                            <div class="mission-stat-badge">
+                                <div class="mission-stat-icon">
+                                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#240038" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="mission-stat-num">Puducherry</div>
+                                    <p class="mission-stat-lbl">Shanmugapuram Location</p>
                                 </div>
                             </div>
                         </div>
@@ -469,14 +469,14 @@
         </div>
     </section>
 
-    <!-- ===================== 5. WHY CHOOSE SARA'S BOUTIQUE? ===================== -->
-    <section class="section-bg-white py-5" id="whychoose" aria-label="Why Choose Sara's Boutique">
+    <!-- ===================== 5. WHY CHOOSE SARAS BOUTIQUE? ===================== -->
+    <section class="section-bg-white py-5" id="whychoose" aria-label="Why Choose Saras Boutique">
         <div class="container">
             <div class="text-center mb-5 reveal">
                 <span class="section-eyebrow-gold">WHY CHOOSE US</span>
-                <h2 class="why-choose-heading">Why Choose Sara's Boutique?</h2>
+                <h2 class="why-choose-heading">Why Choose Saras Boutique?</h2>
                 <p class="why-choose-subtitle">
-                    We go beyond fashion — we create experiences.
+                    Rooted in personalized care, handpicked fabrics, and authentic hospitality in Puducherry.
                 </p>
             </div>
 
@@ -490,8 +490,8 @@
                                 <path d="M10 3l-2 6 4 12 4-12-2-6" />
                             </svg>
                         </div>
-                        <h4 class="why-item-title">Premium Fabrics</h4>
-                        <p class="why-item-desc">Only the finest<br>materials</p>
+                        <h4 class="why-item-title">Handpicked Fabrics</h4>
+                        <p class="why-item-desc">Selected for comfort,<br>grace &amp; durability</p>
                     </div>
                 </div>
 
@@ -506,8 +506,8 @@
                                 <line x1="8.12" y1="8.12" x2="12" y2="12" />
                             </svg>
                         </div>
-                        <h4 class="why-item-title">Expert Craftsmanship</h4>
-                        <p class="why-item-desc">Handpicked &amp;<br>carefully crafted</p>
+                        <h4 class="why-item-title">Thoughtful Craft</h4>
+                        <p class="why-item-desc">Carefully styled &amp;<br>tailored designs</p>
                     </div>
                 </div>
 
@@ -521,8 +521,8 @@
                                 <circle cx="18.5" cy="18.5" r="2.5" />
                             </svg>
                         </div>
-                        <h4 class="why-item-title">Fast &amp; Safe Delivery</h4>
-                        <p class="why-item-desc">Across India</p>
+                        <h4 class="why-item-title">Prompt Service</h4>
+                        <p class="why-item-desc">Local boutique visit &amp;<br>courier options</p>
                     </div>
                 </div>
 
@@ -534,8 +534,8 @@
                                 <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
                             </svg>
                         </div>
-                        <h4 class="why-item-title">Dedicated Support</h4>
-                        <p class="why-item-desc">We're here for you</p>
+                        <h4 class="why-item-title">Personal Assistance</h4>
+                        <p class="why-item-desc">Direct WhatsApp &amp;<br>in-store styling</p>
                     </div>
                 </div>
 
@@ -546,119 +546,105 @@
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
                         </div>
-                        <h4 class="why-item-title">Exclusive Collections</h4>
-                        <p class="why-item-desc">For every occasion</p>
+                        <h4 class="why-item-title">Boutique Collections</h4>
+                        <p class="why-item-desc">For everyday elegance<br>&amp; celebrations</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== 6. REAL STORIES, REAL SMILES ===================== -->
-    <section class="reviews-section-luxury section-bg-ivory luxury-section-pad" id="testimonials" aria-label="Customer Reviews">
+    <!-- ===================== 6. BOUTIQUE EXPERIENCE & HOSPITALITY ===================== -->
+    <section class="reviews-section-luxury section-bg-ivory luxury-section-pad" id="experience" aria-label="Boutique Experience">
         <div class="container">
             <div class="reviews-header-wrap reveal">
-                <div class="section-header-luxury mb-0 text-start" style="text-align: left !important;">
-                    <span class="section-eyebrow-gold">Voices of Elegance</span>
-                    <h2 class="section-title-luxury mb-2">Real Stories, Real Smiles</h2>
+                <div class="section-header-luxury mb-4 text-start" style="text-align: left !important;">
+                    <span class="section-eyebrow-gold">Shanmugapuram, Puducherry</span>
+                    <h2 class="section-title-luxury mb-2">The Saras Boutique Experience</h2>
                     <p class="section-subtitle-luxury mb-0">
-                        Over 12,000+ discerning women celebrate life's most cherished milestones with Sara's Boutique.
+                        From our humble beginnings at home in 2023 to welcoming customers at our Shanmugapuram boutique in 2026, here is what you can expect when you visit or shop with us.
                     </p>
-                </div>
-                <div class="reviews-nav-controls">
-                    <button class="review-nav-btn" id="reviewsPrev" aria-label="Previous review">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="review-nav-btn" id="reviewsNext" aria-label="Next review">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
                 </div>
             </div>
 
-            <div class="swiper reviews-swiper reveal delay-1" id="reviewsSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <article class="review-card-luxury">
-                            <div class="review-top-bar">
-                                <span class="review-occasion-pill"><i class="bi bi-gem me-1"></i> Wedding Wear Edit</span>
-                                <span class="review-quote-icon"><i class="bi bi-quote"></i></span>
-                            </div>
-                            <div class="review-stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="review-product-tag">
-                                <i class="bi bi-bag-check-fill"></i> Purchased: Maharani Velvet Churidar Set
-                            </div>
-                            <p class="review-quote-text">
-                                "The Maharani Velvet Set was the absolute highlight of my sister's wedding! The royal purple shade is so rich and the intricate zari work looks genuinely royal. The custom fit was flawless."
-                            </p>
-                            <div class="review-author-wrap">
-                                <img src="{{ asset('assets/img/card_purple.jpg') }}" alt="Ananya Roy" class="review-avatar-img" loading="lazy">
-                                <div class="review-author-info">
-                                    <span class="review-author-name">Ananya Roy</span>
-                                    <span class="review-author-city">Mumbai, Maharashtra</span>
-                                    <span class="badge-verified-buyer"><i class="bi bi-patch-check-fill"></i> Verified Patron</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <article class="review-card-luxury">
-                            <div class="review-top-bar">
-                                <span class="review-occasion-pill"><i class="bi bi-sparkles me-1"></i> Festive Gala Edit</span>
-                                <span class="review-quote-icon"><i class="bi bi-quote"></i></span>
-                            </div>
-                            <div class="review-stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="review-product-tag">
-                                <i class="bi bi-bag-check-fill"></i> Purchased: Gulzar Rose Silk Churidar Suit
-                            </div>
-                            <p class="review-quote-text">
-                                "Unbelievable craftsmanship! The silk dupatta feels like a whisper, soft yet weighted with authentic zardozi borders. Sara's Boutique has completely redefined luxury ethnic shopping for me."
-                            </p>
-                            <div class="review-author-wrap">
-                                <img src="{{ asset('assets/img/card_pink.jpg') }}" alt="Priya Sundaram" class="review-avatar-img" loading="lazy">
-                                <div class="review-author-info">
-                                    <span class="review-author-name">Priya Sundaram</span>
-                                    <span class="review-author-city">Bengaluru, Karnataka</span>
-                                    <span class="badge-verified-buyer"><i class="bi bi-patch-check-fill"></i> Verified Patron</span>
-                                </div>
-                            </div>
-                        </article>
+            <div class="row g-4 reveal delay-1">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-start" style="background: #ffffff; border-radius: 14px;">
+                        <div class="mb-3 d-inline-flex align-items-center justify-content-center" style="width: 52px; height: 52px; border-radius: 12px; background: rgba(212, 175, 55, 0.12); color: #d4af37; font-size: 24px;">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <h4 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #240038; margin-bottom: 0.75rem;">Welcoming Boutique Store</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1rem;">
+                            Step into our cozy boutique shop in Manikachettyar Nagar, Shanmugapuram, Puducherry. Browse through our fabrics, try on sets, and experience warm, patient personal assistance.
+                        </p>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: #d4af37;">
+                            <i class="bi bi-geo-alt me-1"></i> Puducherry – 605009
+                        </span>
                     </div>
                 </div>
-                <div class="swiper-pagination reviews-swiper-pagination"></div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-start" style="background: #ffffff; border-radius: 14px;">
+                        <div class="mb-3 d-inline-flex align-items-center justify-content-center" style="width: 52px; height: 52px; border-radius: 12px; background: rgba(36, 0, 56, 0.08); color: #240038; font-size: 24px;">
+                            <i class="bi bi-scissors"></i>
+                        </div>
+                        <h4 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #240038; margin-bottom: 0.75rem;">Careful Fitting &amp; Styling</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1rem;">
+                            Every woman deserves clothing that fits seamlessly and accentuates her natural elegance. We help you choose the right cuts, shades, and silhouettes for your festive or everyday needs.
+                        </p>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: #240038;">
+                            <i class="bi bi-stars me-1"></i> Personalized Guidance
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-start" style="background: #ffffff; border-radius: 14px;">
+                        <div class="mb-3 d-inline-flex align-items-center justify-content-center" style="width: 52px; height: 52px; border-radius: 12px; background: rgba(37, 211, 102, 0.12); color: #25d366; font-size: 24px;">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <h4 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #240038; margin-bottom: 0.75rem;">Direct WhatsApp Assistance</h4>
+                        <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1rem;">
+                            Can't visit right away? Enquire directly on WhatsApp at <strong>+91 94426 34491</strong> for live photos, stock checks, pricing, and sizing consultations.
+                        </p>
+                        <a href="https://wa.me/919442634491?text=Hi%2C%20I%20visited%20the%20Saras%20Boutique%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: #25d366; text-decoration: none;">
+                            <i class="bi bi-chat-dots-fill me-1"></i> Message Us on WhatsApp
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===================== 7. BOTTOM CTA BANNER ===================== -->
-    <section class="offer-banner-section section-bg-white luxury-section-pad py-4 py-lg-5" aria-label="Special Festival Offer">
+    <section class="offer-banner-section section-bg-white luxury-section-pad py-4 py-lg-5" aria-label="Visit Saras Boutique">
         <div class="container">
             <div class="promo-banner-card reveal-scale">
                 <div class="row g-0 align-items-center">
                     <div class="col-12 col-lg-4 col-xl-4">
                         <div class="model-col-wrap image-reveal">
-                            <img src="{{ asset('assets/img/offbanner.png') }}" alt="Model wearing purple Churidar set" class="model-image" loading="eager">
+                            <img src="{{ asset('assets/img/offbanner.png') }}" alt="Saras Boutique Fashion" class="model-image" loading="eager">
                             <div class="model-fade-overlay" aria-hidden="true"></div>
                         </div>
                     </div>
 
                     <div class="col-12 col-lg-5 col-xl-5">
                         <div class="offer-center-wrap ps-lg-3 reveal-right">
-                            <span class="offer-eyebrow">Special Offer</span>
+                            <span class="offer-eyebrow">Visit Our Boutique</span>
                             <h2 class="offer-main-title">
-                                Flat <span class="offer-percent-highlight">25%</span> OFF
+                                Discover Saras Boutique
                             </h2>
                             <p class="offer-subtitle">
-                                On Selected Pure Silk Churidar Sets with code <strong>FESTIVE25</strong>
+                                Explore handpicked churidar sets, sarees, and timeless women's ethnic wear in Shanmugapuram, Puducherry.
                             </p>
-                            <div>
+                            <div class="d-flex flex-wrap gap-2">
                                 <a href="{{ route('collections') }}" class="btn-shop-pill">
-                                    <span>Shop Now</span>
+                                    <span>Explore Collections</span>
                                     <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="https://wa.me/919442634491?text=Hi%2C%20I%20visited%20the%20Saras%20Boutique%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." target="_blank" rel="noopener noreferrer" class="btn btn-outline-light rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2" style="border-color: rgba(255,255,255,0.4); font-size: 0.9rem;">
+                                    <i class="bi bi-whatsapp text-success"></i>
+                                    <span>Enquire on WhatsApp</span>
                                 </a>
                             </div>
                         </div>
@@ -675,21 +661,21 @@
                                         </svg>
                                     </div>
                                     <div class="feature-badge-text">
-                                        <span class="feature-text-title">Premium Quality</span>
-                                        <span class="feature-text-desc">Silk Mark Certified</span>
+                                        <span class="feature-text-title">Authentic Quality</span>
+                                        <span class="feature-text-desc">Handpicked Fabrics</span>
                                     </div>
                                 </div>
 
                                 <div class="feature-badge-row">
                                     <div class="feature-circle-icon">
                                         <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                            <polygon points="12 2 15 8.5 22 9 17 14 18.5 21 12 17.5 5.5 21 7 14 2 9 9 8.5 12 2"></polygon>
-                                            <circle cx="12" cy="12" r="2.5"></circle>
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
                                         </svg>
                                     </div>
                                     <div class="feature-badge-text">
-                                        <span class="feature-text-title">Custom Tailored</span>
-                                        <span class="feature-text-desc">Made-to-Measure</span>
+                                        <span class="feature-text-title">Puducherry Boutique</span>
+                                        <span class="feature-text-desc">Shanmugapuram</span>
                                     </div>
                                 </div>
                             </div>
@@ -705,34 +691,32 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        new Swiper('#reviewsSwiper', {
-            slidesPerView: 1.08,
-            spaceBetween: 14,
-            grabCursor: true,
-            loop: true,
-            speed: 700,
-            pagination: {
-                el: '.reviews-swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                prevEl: '#reviewsPrev',
-                nextEl: '#reviewsNext',
-            },
-            breakpoints: {
-                320: { slidesPerView: 1.08, spaceBetween: 12 },
-                576: { slidesPerView: 1.5, spaceBetween: 16 },
-                768: { slidesPerView: 2, spaceBetween: 18 },
-                992: { slidesPerView: 2.5, spaceBetween: 20 },
-                1200: { slidesPerView: 3, spaceBetween: 24 },
-            },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-        });
+        const swiperEl = document.querySelector('#reviewsSwiper');
+        if (swiperEl && typeof Swiper !== 'undefined') {
+            new Swiper(swiperEl, {
+                slidesPerView: 1.08,
+                spaceBetween: 14,
+                grabCursor: true,
+                loop: true,
+                speed: 700,
+                pagination: {
+                    el: '.reviews-swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    prevEl: '#reviewsPrev',
+                    nextEl: '#reviewsNext',
+                },
+                breakpoints: {
+                    320: { slidesPerView: 1.08, spaceBetween: 12 },
+                    576: { slidesPerView: 1.5, spaceBetween: 16 },
+                    768: { slidesPerView: 2, spaceBetween: 18 },
+                    992: { slidesPerView: 2.5, spaceBetween: 20 },
+                    1200: { slidesPerView: 3, spaceBetween: 24 },
+                },
+            });
+        }
     });
 </script>
 @endpush

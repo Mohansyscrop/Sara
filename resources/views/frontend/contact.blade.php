@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', "Contact Us | Sara's Boutique — Luxury Indian Ethnic Wear")
-@section('meta_description', "Get in touch with Sara's Boutique. Visit our luxury flagship store in Green Park, New Delhi, or contact our concierge for bespoke bridal wear, sizing assistance, and order inquiries.")
-@section('meta_keywords', "Sara's Boutique Contact, Indian Ethnic Wear Delhi, Luxury Boutique Green Park, Customer Support, Bridal Concierge, Salwar Suits, Lehenga Inquiry")
-@section('og_title', "Contact Us | Sara's Boutique — Luxury Ethnic Wear")
+@section('title', "Contact Us | Saras Boutique Puducherry — Handpicked Women's Fashion")
+@section('meta_description', "Get in touch with Saras Boutique. Visit our boutique at Shanmugapuram, Puducherry – 605009, or contact us via WhatsApp and phone (+91 94426 34491) for collection enquiries.")
+@section('meta_keywords', "Saras Boutique Contact, Puducherry Boutique, Shanmugapuram Boutique, Women's Ethnic Wear Puducherry, WhatsApp Enquiry 9442634491")
+@section('og_title', "Contact Us | Saras Boutique Puducherry")
 @section('og_image', asset('assets/img/contact_store.jpg'))
 
 @push('styles')
@@ -16,7 +16,7 @@
 @section('content')
 
     <!-- ===================== 3. CONTACT HERO BANNER ===================== -->
-    <section class="collection-hero-banner" aria-label="Contact Us Banner">
+    <section class="collection-hero-banner" aria-label="Contact Saras Boutique Banner">
         <div class="container position-relative">
             <div class="collection-hero-inner">
 
@@ -31,9 +31,8 @@
 
                 <!-- Description Paragraph -->
                 <p class="collection-desc hero-load-item delay-4">
-                    Whether you have a question about our collections, need assistance with your order,
-                    or simply wish to connect with us, we're here to help. Reach out and let us make
-                    your experience with Sara's Boutique truly special.
+                    Whether you have a question about our collections, wish to enquire about fabrics and sizing,
+                    or plan a visit to our boutique in Puducherry, we are here to assist you warmly.
                 </p>
 
                 <!-- Gold Ornate Divider Line -->
@@ -78,13 +77,12 @@
 
                 <!-- ── 5. LEFT COLUMN: CONTACT INFORMATION ── -->
                 <div class="col-lg-5 col-12 reveal-left">
-                    <span class="section-gold-eyebrow">CONTACT INFORMATION</span>
-                    <h2 class="contact-info-title">Let's Talk</h2>
-                    <div class="contact-info-script">We're here for you</div>
+                    <span class="section-gold-eyebrow">OFFICIAL BUSINESS DETAILS</span>
+                    <h2 class="contact-info-title">Let's Connect</h2>
+                    <div class="contact-info-script">Personalized boutique care</div>
 
                     <p class="contact-info-intro">
-                        Whether you have a question about our products, need help with an order, or just want to say
-                        hello — feel free to reach out. Our team is ready to assist you.
+                        Have a question about our collections, sizing, or wish to plan a visit to our boutique shop in Puducherry? Reach out directly via phone, email, or WhatsApp.
                     </p>
 
                     <!-- Contact Details Blocks List -->
@@ -96,63 +94,62 @@
                                 <i class="bi bi-geo-alt-fill"></i>
                             </div>
                             <div>
-                                <h4 class="contact-item-heading">Our Flagship Boutique</h4>
+                                <h4 class="contact-item-heading">Our Boutique Store</h4>
                                 <div class="contact-item-body">
-                                    Sara's Boutique<br>
-                                    Road No. 36, Jubilee Hills<br>
-                                    Hyderabad – 500033, India
+                                    <strong>Sara's Boutique</strong><br>
+                                    No. 1, 2nd Mani Road, 4th Cross Street,<br>
+                                    Manikachettyar Nagar, Shanmugapuram,<br>
+                                    Puducherry – 605009, India.
+                                </div>
+                                <div class="mt-2">
+                                    <a href="https://maps.google.com/?q=No.+1,+2nd+Mani+Road,+4th+Cross+Street,+Manikachettyar+Nagar,+Shanmugapuram,+Puducherry+605009" target="_blank" rel="noopener noreferrer" class="small text-gold fw-semibold text-decoration-none">
+                                        <i class="bi bi-cursor-fill me-1"></i> Get Directions on Google Maps
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         <!-- PHONE -->
                         <div class="contact-info-card-item">
-                            <div class="contact-icon-bubble" title="Phone Number">
+                            <div class="contact-icon-bubble" title="Mobile Number">
                                 <i class="bi bi-telephone-fill"></i>
                             </div>
                             <div>
-                                <h4 class="contact-item-heading">Phone &amp; WhatsApp Concierge</h4>
+                                <h4 class="contact-item-heading">Mobile Number</h4>
                                 <div class="contact-item-body">
-                                    <a href="tel:+919876543210" class="fw-semibold text-dark text-decoration-none">+91 98765 43210</a><br>
-                                    Mon – Sat, 10:00 AM – 7:00 PM IST
+                                    <a href="tel:+919442634491" class="fw-semibold text-dark text-decoration-none">+91 94426 34491</a><br>
+                                    <span class="small text-muted">Tap to call our boutique directly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WHATSAPP -->
+                        <div class="contact-info-card-item">
+                            <div class="contact-icon-bubble" style="background: rgba(37, 211, 102, 0.12); color: #25d366;" title="WhatsApp Enquiry">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-item-heading">WhatsApp Enquiry</h4>
+                                <div class="contact-item-body">
+                                    <span class="fw-semibold text-dark">+91 94426 34491</span><br>
+                                    <span class="small text-muted mb-2 d-block">Quick responses for collections, sizing &amp; orders</span>
+                                    <a href="https://wa.me/919442634491?text=Hi%2C%20I%20visited%20the%20Saras%20Boutique%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success rounded-pill px-3 d-inline-flex align-items-center gap-2">
+                                        <i class="bi bi-whatsapp"></i> Enquire on WhatsApp
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         <!-- EMAIL -->
                         <div class="contact-info-card-item">
-                            <div class="contact-icon-bubble" title="Email Address">
+                            <div class="contact-icon-bubble" title="Official Email">
                                 <i class="bi bi-envelope-fill"></i>
                             </div>
                             <div>
-                                <h4 class="contact-item-heading">Email Inquiries</h4>
+                                <h4 class="contact-item-heading">Official Email</h4>
                                 <div class="contact-item-body">
-                                    <a href="mailto:concierge@sarasboutique.com" class="fw-semibold text-dark text-decoration-none">concierge@sarasboutique.com</a><br>
-                                    We respond within 24 hours
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- SOCIAL MEDIA -->
-                        <div class="contact-info-card-item">
-                            <div class="contact-icon-bubble" title="Social Channels">
-                                <i class="bi bi-share-fill"></i>
-                            </div>
-                            <div>
-                                <h4 class="contact-item-heading">Follow Our Journey</h4>
-                                <div class="contact-social-icons-row">
-                                    <a href="#instagram" class="contact-social-btn" title="Follow on Instagram" aria-label="Instagram">
-                                        <i class="bi bi-instagram"></i>
-                                    </a>
-                                    <a href="#facebook" class="contact-social-btn" title="Follow on Facebook" aria-label="Facebook">
-                                        <i class="bi bi-facebook"></i>
-                                    </a>
-                                    <a href="#pinterest" class="contact-social-btn" title="Follow on Pinterest" aria-label="Pinterest">
-                                        <i class="bi bi-pinterest"></i>
-                                    </a>
-                                    <a href="#youtube" class="contact-social-btn" title="Subscribe on YouTube" aria-label="YouTube">
-                                        <i class="bi bi-youtube"></i>
-                                    </a>
+                                    <a href="mailto:Sarasboutique2026@gmail.com" class="fw-semibold text-dark text-decoration-none">Sarasboutique2026@gmail.com</a><br>
+                                    <span class="small text-muted">Tap to compose an email</span>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +210,7 @@
                                     <label for="phoneInput" class="form-label-luxury">Phone Number</label>
                                     <input type="tel" class="form-control-luxury @error('phone') is-invalid @enderror" 
                                            id="phoneInput" name="phone" value="{{ old('phone') }}"
-                                           placeholder="+91 98765 43210" autocomplete="tel">
+                                           placeholder="+91 94426 34491" autocomplete="tel">
                                     @error('phone')
                                         <div class="text-danger small mt-1">{{ $message }}</div>
                                     @enderror
@@ -236,11 +233,14 @@
                                 <select class="form-control-luxury form-select @error('subject') is-invalid @enderror" 
                                         id="subjectSelect" name="subject" required>
                                     <option value="" disabled {{ old('subject') ? '' : 'selected' }}>Select an option</option>
-                                    <option value="General Inquiry" {{ old('subject') == 'General Inquiry' ? 'selected' : '' }}>General Inquiry</option>
+                                    <option value="Product Sizing & Fabric Inquiries" {{ old('subject') == 'Product Sizing & Fabric Inquiries' ? 'selected' : '' }}>Product Inquiries &amp; Sizing Assistance</option>
                                     <option value="Order Status & Tracking" {{ old('subject') == 'Order Status & Tracking' ? 'selected' : '' }}>Order Status &amp; Tracking</option>
+                                    <option value="Payment & Billing Support" {{ old('subject') == 'Payment & Billing Support' ? 'selected' : '' }}>Payment &amp; Billing Support</option>
+                                    <option value="Shipping & Delivery Inquiries" {{ old('subject') == 'Shipping & Delivery Inquiries' ? 'selected' : '' }}>Shipping &amp; Delivery Inquiries</option>
+                                    <option value="Order Cancellation Request" {{ old('subject') == 'Order Cancellation Request' ? 'selected' : '' }}>Order Cancellation Request</option>
+                                    <option value="Returns & Exchanges" {{ old('subject') == 'Returns & Exchanges' ? 'selected' : '' }}>Returns &amp; Refund Assistance</option>
                                     <option value="Custom Fitting & Bridal Concierge" {{ old('subject') == 'Custom Fitting & Bridal Concierge' ? 'selected' : '' }}>Custom Fitting &amp; Bridal Concierge</option>
-                                    <option value="Returns & Exchanges" {{ old('subject') == 'Returns & Exchanges' ? 'selected' : '' }}>Returns &amp; Exchanges</option>
-                                    <option value="Wholesale & Collaborations" {{ old('subject') == 'Wholesale & Collaborations' ? 'selected' : '' }}>Wholesale &amp; Collaborations</option>
+                                    <option value="General Inquiry" {{ old('subject') == 'General Inquiry' ? 'selected' : '' }}>General Inquiry</option>
                                 </select>
                                 <div class="form-feedback-error" id="subjectError">Please select a subject for your message.</div>
                                 @error('subject')
@@ -286,14 +286,14 @@
     </section>
 
     <!-- ===================== 9 & 10. STORE LOCATION SECTION ===================== -->
-    <section class="store-location-section" aria-label="Our Flagship Store Location in Jubilee Hills Hyderabad">
+    <section class="store-location-section" aria-label="Saras Boutique Location in Shanmugapuram Puducherry">
         <div class="container">
 
             <div class="location-unified-card reveal-scale">
 
                 <!-- Col 1: Storefront Photo -->
                 <div class="location-store-photo-wrap">
-                    <img src="{{ asset('assets/img/contact_store.jpg') }}" alt="Sara's Boutique Flagship Store in Jubilee Hills Hyderabad"
+                    <img src="{{ asset('assets/img/contact_store.jpg') }}" alt="Saras Boutique Store in Shanmugapuram Puducherry"
                         loading="lazy">
                 </div>
 
@@ -303,36 +303,46 @@
                         <i class="bi bi-geo-alt-fill"></i>
                     </div>
 
-                    <h3 class="location-panel-heading">Visit Our Store</h3>
+                    <h3 class="location-panel-heading">Visit Our Boutique</h3>
 
                     <p class="location-panel-desc">
-                        Experience the elegance of our collection in person. Walk into our boutique and explore the
-                        latest styles, touch our mulberry silks, and meet our personal bridal stylists.
+                        Experience our handpicked collections in person. Walk into our boutique in Shanmugapuram, explore fabrics, try on sets, and receive personalized assistance.
                     </p>
 
-                    <a href="https://maps.google.com/?q=Jubilee+Hills+Hyderabad" target="_blank"
+                    <a href="https://maps.google.com/?q=No.+1,+2nd+Mani+Road,+4th+Cross+Street,+Manikachettyar+Nagar,+Shanmugapuram,+Puducherry+605009" target="_blank"
                         rel="noopener noreferrer" class="btn-directions text-decoration-none">
-                        <span>Get Directions</span>
+                        <span>Get Directions on Google Maps</span>
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
 
-                <!-- Col 3: Map Section with Custom Location Pin -->
-                <div class="location-map-wrap">
-                    <img src="{{ asset('assets/img/contact_map.jpg') }}" alt="Hyderabad Jubilee Hills Map Overview" class="location-map-bg-img"
-                        loading="lazy">
+                <!-- Col 3: Live Interactive Google Maps Location -->
+                <div class="location-map-wrap position-relative">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=No.+1,+2nd+Mani+Road,+4th+Cross+Street,+Manikachettyar+Nagar,+Shanmugapuram,+Puducherry+605009&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; width: 100%; height: 100%; min-height: 380px; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Saras Boutique Puducherry Google Maps Location">
+                    </iframe>
 
-                    <!-- Interactive Floating Pin & Location Tooltip -->
-                    <div class="map-interactive-pin-box"
-                        onclick="showToast('Sara\'s Boutique: Road No. 36, Jubilee Hills, Hyderabad – 500033');">
-                        <div class="map-custom-marker">
-                            <i class="bi bi-geo-alt-fill"></i>
+                    <!-- Floating Boutique Location Card -->
+                    <a href="https://maps.google.com/?q=No.+1,+2nd+Mani+Road,+4th+Cross+Street,+Manikachettyar+Nagar,+Shanmugapuram,+Puducherry+605009" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="map-floating-boutique-card text-decoration-none shadow-sm"
+                       title="Open full directions in Google Maps">
+                        <div class="map-floating-pin-circle">
+                            <i class="bi bi-geo-alt-fill text-gold"></i>
                         </div>
-                        <div class="map-floating-tooltip">
-                            <div class="map-tooltip-title">Sara's Boutique</div>
-                            <div class="map-tooltip-address">Road No. 36, Jubilee Hills,<br>Hyderabad – 500033</div>
+                        <div class="map-floating-text">
+                            <div class="map-floating-title">Saras Boutique <i class="bi bi-box-arrow-up-right ms-1 text-gold" style="font-size: 11px;"></i></div>
+                            <div class="map-floating-subtitle">No. 1, 2nd Mani Road, 4th Cross Street, Shanmugapuram, Puducherry – 605009</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
@@ -341,7 +351,7 @@
     </section>
 
     <!-- ===================== 11. SERVICE BENEFITS STRIP ===================== -->
-    <section class="service-benefits-strip" aria-label="Sara's Boutique Service Guarantees">
+    <section class="service-benefits-strip" aria-label="Saras Boutique Service Guarantees">
         <div class="container">
             <div class="row g-4 align-items-center stagger-group">
 
@@ -411,12 +421,12 @@
                     <span class="section-gold-eyebrow">QUICK ANSWERS</span>
                     <h3 class="faq-main-heading">Frequently Asked Questions</h3>
                     <p class="faq-main-desc">
-                        Find quick answers to the most common questions about our products, shipping, returns and more.
+                        Find quick answers to the most common questions about our products, boutique visits, shipping, and WhatsApp support.
                     </p>
 
                     <a href="#contactInquiryForm" class="btn-view-all-faqs text-decoration-none"
                         onclick="document.getElementById('subjectSelect').value='General Inquiry';">
-                        <span>View All FAQs</span>
+                        <span>Send an Inquiry</span>
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -426,61 +436,41 @@
 
                         <div class="faq-accordion-item active">
                             <button type="button" class="faq-header-btn" onclick="toggleFaq(this)">
-                                <span>How can I track my order?</span>
+                                <span>How can I enquire or purchase from Saras Boutique?</span>
                                 <span class="faq-toggle-icon"><i class="bi bi-plus"></i></span>
                             </button>
                             <div class="faq-body-content">
-                                Once your bespoke ensemble is dispatched, you will receive an SMS and email notification
-                                with an insured tracking number. You can also view live delivery milestones directly
-                                from our Customer Care desk or by contacting our styling team on WhatsApp.
+                                You can browse our collections online and enquire directly on WhatsApp at +91 94426 34491, submit our contact form, or visit our boutique shop located at Shanmugapuram, Puducherry.
                             </div>
                         </div>
 
                         <div class="faq-accordion-item">
                             <button type="button" class="faq-header-btn" onclick="toggleFaq(this)">
-                                <span>What is your return policy?</span>
+                                <span>Can I visit your boutique store in Puducherry?</span>
                                 <span class="faq-toggle-icon"><i class="bi bi-plus"></i></span>
                             </button>
                             <div class="faq-body-content">
-                                We offer a hassle-free 7-day return and exchange policy on all standard ready-to-wear
-                                pieces, provided garments are unworn with original luxury tags and security seals
-                                intact. Custom-tailored bridal pieces undergo dedicated fitting sessions.
+                                Yes! We welcome you to visit us at No. 1, 2nd Mani Road, 4th Cross Street, Manikachettyar Nagar, Shanmugapuram, Puducherry – 605009, India. You can view our collections in person and receive personalized styling advice.
                             </div>
                         </div>
 
                         <div class="faq-accordion-item">
                             <button type="button" class="faq-header-btn" onclick="toggleFaq(this)">
-                                <span>Do you offer international shipping?</span>
+                                <span>Do you deliver across India?</span>
                                 <span class="faq-toggle-icon"><i class="bi bi-plus"></i></span>
                             </button>
                             <div class="faq-body-content">
-                                Yes! Sara's Boutique proudly ships worldwide including the USA, UK, Canada, UAE,
-                                Singapore, and Australia via DHL Express and FedEx International Priority with full
-                                doorstep customs clearance and insurance.
+                                Yes! Saras Boutique ships carefully packaged orders across India via trusted express courier partners with door delivery.
                             </div>
                         </div>
 
                         <div class="faq-accordion-item">
                             <button type="button" class="faq-header-btn" onclick="toggleFaq(this)">
-                                <span>How can I cancel or modify my order?</span>
+                                <span>How can I get sizing and fitting assistance?</span>
                                 <span class="faq-toggle-icon"><i class="bi bi-plus"></i></span>
                             </button>
                             <div class="faq-body-content">
-                                Orders may be modified or cancelled within 24 hours of placement before our master
-                                artisans cut the fabric. Please contact our concierge immediately at +91 98765 43210 or
-                                via email with your order number.
-                            </div>
-                        </div>
-
-                        <div class="faq-accordion-item">
-                            <button type="button" class="faq-header-btn" onclick="toggleFaq(this)">
-                                <span>What payment methods do you accept?</span>
-                                <span class="faq-toggle-icon"><i class="bi bi-plus"></i></span>
-                            </button>
-                            <div class="faq-body-content">
-                                We accept all major Indian and international debit/credit cards (Visa, MasterCard,
-                                Amex), UPI (Google Pay, PhonePe, Paytm), NetBanking across 50+ banks, EMI options, and
-                                Cash on Delivery (COD) for domestic orders under ₹15,000.
+                                Connect directly with us via WhatsApp at +91 94426 34491. We will be happy to share detailed measurements, close-up fabric videos, and fit recommendations.
                             </div>
                         </div>
 
@@ -505,7 +495,7 @@
                 </div>
 
                 <div class="col-lg-6 col-12">
-                    <form class="newsletter-pill-input-box" onsubmit="event.preventDefault(); showToast('Thank you for subscribing to Sara\'s VIP Circle!'); this.reset();">
+                    <form class="newsletter-pill-input-box" onsubmit="event.preventDefault(); showToast('Thank you for subscribing to Saras Boutique updates!'); this.reset();">
                         <input type="email" placeholder="Enter your email address" required
                             aria-label="Enter your email address" id="newsletterEmailInput">
                         <button type="submit" class="btn-subscribe-gold">

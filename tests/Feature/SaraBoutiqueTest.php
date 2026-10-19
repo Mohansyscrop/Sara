@@ -16,7 +16,7 @@ class SaraBoutiqueTest extends TestCase
     {
         $response = $this->get('/');
         $response->assertStatus(200);
-        $response->assertSee("Sara's Boutique");
+        $this->assertTrue(str_contains($response->getContent(), 'Saras Boutique') || str_contains($response->getContent(), "Sara's Boutique"));
     }
 
     public function test_about_page_loads_successfully()
@@ -83,5 +83,46 @@ class SaraBoutiqueTest extends TestCase
             $response->assertStatus(200);
             $response->assertSee("Dashboard Overview");
         }
+    }
+
+    public function test_contact_us_slug_loads_successfully()
+    {
+        $response = $this->get('/contact-us');
+        $response->assertStatus(200);
+        $response->assertSee("Contact Us");
+        $response->assertSee("+91 94426 34491");
+        $response->assertSee("Sarasboutique2026@gmail.com");
+    }
+
+    public function test_terms_and_conditions_page_loads_successfully()
+    {
+        $response = $this->get('/terms-and-conditions');
+        $response->assertStatus(200);
+        $response->assertSee("Terms & Conditions");
+        $response->assertSee("Sara’s Boutique");
+    }
+
+    public function test_privacy_policy_page_loads_successfully()
+    {
+        $response = $this->get('/privacy-policy');
+        $response->assertStatus(200);
+        $response->assertSee("Privacy Policy");
+        $response->assertSee("Razorpay");
+    }
+
+    public function test_shipping_policy_page_loads_successfully()
+    {
+        $response = $this->get('/shipping-policy');
+        $response->assertStatus(200);
+        $response->assertSee("Shipping & Delivery Policy");
+        $response->assertSee("4,000");
+    }
+
+    public function test_refund_cancellation_policy_page_loads_successfully()
+    {
+        $response = $this->get('/refund-cancellation-policy');
+        $response->assertStatus(200);
+        $response->assertSee("Refund & Cancellation Policy");
+        $response->assertSee("7 Days");
     }
 }

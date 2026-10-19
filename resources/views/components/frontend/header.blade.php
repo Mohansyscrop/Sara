@@ -3,8 +3,8 @@
         <div class="d-flex align-items-center justify-content-between">
 
             <!-- BRAND / LOGO -->
-            <a href="{{ route('home') }}" class="brand-container" aria-label="Sara's Boutique Home">
-                <img src="{{ asset('assets/img/logo1.png') }}" alt="Sara's Boutique - Fashion · Elegance · You" class="brand-logo-img">
+            <a href="{{ route('home') }}" class="brand-container" aria-label="Saras Boutique Home">
+                <img src="{{ asset('assets/img/logo1.png') }}" alt="Saras Boutique — Women's Boutique in Puducherry" class="brand-logo-img">
             </a>
 
                 <nav class="d-none d-lg-block">
@@ -48,7 +48,7 @@
         <li>
             <a href="{{ route('contact') }}"
                class="nav-luxury-link {{ request()->routeIs('contact') ? 'active' : '' }}">
-                Contact
+                Contact Us
             </a>
         </li>
 
@@ -58,20 +58,31 @@
             
 
             <div class="d-flex align-items-center gap-3">
-                <div class="nav-actions">
-                    <!-- Search Icon -->
+                <!-- Phone (Clickable) -->
+                <a href="tel:+919442634491" class="d-none d-xxl-flex align-items-center gap-2 text-decoration-none text-white small" title="Call Saras Boutique">
+                    <i class="bi bi-telephone-fill text-gold"></i>
+                    <span class="fw-medium">+91 94426 34491</span>
+                </a>
+
+                <!-- WhatsApp Enquiry Button -->
+                <a href="https://wa.me/919442634491?text=Hi%2C%20I%20visited%20the%20Saras%20Boutique%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="btn btn-sm rounded-pill px-3 py-1 d-none d-sm-inline-flex align-items-center gap-2 text-white" 
+                   style="background: linear-gradient(135deg, #128C7E, #25D366); font-size: 13px; font-weight: 500;"
+                   title="WhatsApp Enquiry">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>Enquire</span>
+                </a>
+
+                <div class="nav-actions d-none">
+                    <!-- Search Icon (Hidden per request) -->
                     <button type="button" class="action-icon-btn" data-bs-toggle="modal"
                         data-bs-target="#searchModal" title="Search Collection" aria-label="Search">
                         <i class="bi bi-search"></i>
                     </button>
 
-                    <!-- User profile / Admin Login -->
-                    <!-- <a href="{{ route('admin.dashboard') }}" class="action-icon-btn" title="Account / Admin Portal"
-                        aria-label="Account">
-                        <i class="bi bi-person"></i>
-                    </a> -->
-
-                    <!-- Wishlist icon -->
+                    <!-- Wishlist icon (Hidden per request) -->
                     <a href="{{ route('collections') }}" class="action-icon-btn position-relative" title="Wishlist" aria-label="Wishlist">
                         <i class="bi bi-heart"></i>
                     </a>

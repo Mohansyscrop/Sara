@@ -907,14 +907,28 @@
 
                                 <div id="checkoutAlertBox" class="d-none mb-3 alert alert-danger p-2 small"></div>
 
+                                @php
+                                    $isRazorpayGatewayEnabled = config('razorpay.enabled', false);
+                                @endphp
+
                                 <button type="submit" id="checkoutPayBtn" class="btn-pay-rzp">
-                                    <i class="bi bi-lock-fill me-1"></i>
-                                    <span id="checkoutPayBtnText">Proceed to Pay ₹{{ number_format($product->price) }}</span>
+                                    @if($isRazorpayGatewayEnabled)
+                                        <i class="bi bi-lock-fill me-1"></i>
+                                        <span id="checkoutPayBtnText">Proceed to Pay ₹{{ number_format($product->price) }}</span>
+                                    @else
+                                        <i class="bi bi-bag-check-fill me-1"></i>
+                                        <span id="checkoutPayBtnText">Place Direct Order (₹{{ number_format($product->price) }})</span>
+                                    @endif
                                 </button>
 
                                 <div class="rzp-trust-badge">
-                                    <i class="bi bi-shield-shaded text-success"></i>
-                                    <span>Secured by <strong>Razorpay</strong> • UPI, Cards, NetBanking</span>
+                                    @if($isRazorpayGatewayEnabled)
+                                        <i class="bi bi-shield-shaded text-success"></i>
+                                        <span>Secured by <strong>Razorpay</strong> • UPI, Cards, NetBanking</span>
+                                    @else
+                                        <i class="bi bi-patch-check-fill text-success"></i>
+                                        <span>Direct Express Inquiry • <strong>Zero Upfront Payment</strong></span>
+                                    @endif
                                 </div>
                             </form>
                         </div>
@@ -999,6 +1013,7 @@
 
         const productUnitPrice = {{ (float) $product->price }};
         const productId = {{ $product->id }};
+        const isRazorpayEnabled = {{ config('razorpay.enabled', false) ? 'true' : 'false' }};
 
         function handleBuyNow(title) {
             const subtotal = productUnitPrice * quantity;
@@ -1019,7 +1034,13 @@
             if (modalSubtotal) modalSubtotal.textContent = '₹' + subtotal.toLocaleString('en-IN');
             if (modalShipping) modalShipping.textContent = shipping === 0 ? 'FREE' : '₹' + shipping.toLocaleString('en-IN');
             if (modalTotal) modalTotal.textContent = '₹' + total.toLocaleString('en-IN');
-            if (btnPayText) btnPayText.textContent = `Proceed to Pay ₹${total.toLocaleString('en-IN')}`;
+            if (btnPayText) {
+                if (isRazorpayEnabled) {
+                    btnPayText.textContent = `Proceed to Pay ₹${total.toLocaleString('en-IN')}`;
+                } else {
+                    btnPayText.textContent = `Place Direct Order (₹${total.toLocaleString('en-IN')})`;
+                }
+            }
 
             const alertBox = document.getElementById('checkoutAlertBox');
             if (alertBox) {
@@ -1069,11 +1090,15 @@
 
             payBtn.disabled = true;
             const originalBtnHtml = payBtnText.innerHTML;
-            payBtnText.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Connecting to Gateway...';
+            payBtnText.innerHTML = isRazorpayEnabled
+                ? '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Connecting to Gateway...'
+                : '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Submitting Order...';
             alertBox.classList.add('d-none');
 
             try {
-                await loadRazorpaySdk();
+                if (isRazorpayEnabled) {
+                    await loadRazorpaySdk();
+                }
 
                 const response = await fetch("{{ route('checkout.razorpay.create') }}", {
                     method: 'POST',
@@ -1100,9 +1125,23 @@
                 const data = await response.json();
 
                 if (!response.ok || !data.success) {
-                    throw new Error(data.message || 'Unable to initialize order.');
+                    throw new Error(data.message || 'Unable to submit direct order.');
                 }
 
+                // If Direct Order mode (Razorpay disabled)
+                if (data.direct_order || !isRazorpayEnabled) {
+                    const modalEl = document.getElementById('buyNowCheckoutModal');
+                    const modalObj = bootstrap.Modal.getInstance(modalEl);
+                    if (modalObj) modalObj.hide();
+
+                    showToast(data.message || 'Direct Order placed successfully!');
+                    setTimeout(() => {
+                        window.location.href = data.redirect_url;
+                    }, 400);
+                    return;
+                }
+
+                // Razorpay Payment Flow (when Razorpay is re-enabled)
                 const rzpOptions = {
                     key: data.key_id,
                     amount: data.amount,

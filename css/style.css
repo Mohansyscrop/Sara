@@ -43,6 +43,14 @@ html {
     scrollbar-color: #d4af37 #170024;
 }
 
+body.modal-open {
+    padding-right: 0 !important;
+}
+
+.modal {
+    padding-right: 0 !important;
+}
+
 /* ── Luxury Theme Scrollbar ── */
 ::-webkit-scrollbar {
     width: 10px;
@@ -3263,7 +3271,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
     line-height: 1.8;
     color: #5c4a5c;
     max-width: 480px;
-    margin-bottom: 2rem;
+    margin-bottom: 1em;
 }
 
 /* Pill CTA Button */
